@@ -1,0 +1,14 @@
+#page-content {
+  background-color: $green;
+}
+
+.form-control:focus,
+.custom-select:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+.btn.focus, .btn:focus {
+  outline: 0;
+  box-shadow: none !important;
+}
