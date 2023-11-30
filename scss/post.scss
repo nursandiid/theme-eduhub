@@ -1,14 +1,45 @@
-#page-content {
-  background-color: $green;
-}
+@import "preset";
+@import "utilities";
+@import "navbar";
+@import "footer";
+@import "frontpage";
 
-.form-control:focus,
-.custom-select:focus {
-  outline: 0;
-  box-shadow: none;
-}
+/* ------------- SECONDARY NAVIGATION ------------- */
+.secondary-navigation {
+  padding-bottom: 0;
 
-.btn.focus, .btn:focus {
-  outline: 0;
-  box-shadow: none !important;
+  .moremenu .nav-link:hover,
+  .moremenu .nav-link:focus {
+    border-bottom-color: $primary;
+  }
+
+  .moremenu .nav-link {
+    height: 60px;
+    box-shadow: none;
+  }
 }
+/* ------------- END SECONDARY NAVIGATION ------------- */
+
+/* ------------- SETTINGS FORM ------------- */
+.settingsform {
+  .nav-link {
+    border-radius: 0;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus {
+    border-color: transparent;
+    background-color: #f8f9fa;
+  }
+
+  .nav-link.active,
+  .nav-item.show .nav-link {
+    border-color: transparent;
+    border-bottom: 2px solid $primary;
+  }
+
+  .nav-link:focus {
+    box-shadow: none;
+  }
+}
+/* ------------- END SETTINGS FORM ------------- */

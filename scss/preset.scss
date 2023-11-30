@@ -1,0 +1,113 @@
+.btn {
+  outline: none !important;
+}
+
+.form-control:focus,
+.custom-select:focus {
+  box-shadow: 0 0 0 0.2rem rgba($color: $primary, $alpha: 0.5);
+}
+
+.btn-primary:focus,
+.btn-primary.focus {
+  box-shadow: 0 0 0 0.2rem rgba($color: $primary, $alpha: 0.5);
+}
+
+.btn-secondary:focus,
+.btn-secondary.focus {
+  box-shadow: 0 0 0 0.2rem rgba($color: $secondary, $alpha: 0.5);
+}
+
+.btn-success:focus,
+.btn-success.focus {
+  box-shadow: 0 0 0 0.2rem rgba($color: $green, $alpha: 0.5);
+}
+
+.btn-info:focus,
+.btn-info.focus {
+  box-shadow: 0 0 0 0.2rem rgba($color: $info, $alpha: 0.5);
+}
+
+.btn-warning:focus,
+.btn-warning.focus {
+  box-shadow: 0 0 0 0.2rem rgba($color: $warning, $alpha: 0.5);
+}
+
+.btn-danger:focus,
+.btn-danger.focus {
+  box-shadow: 0 0 0 0.2rem rgba($color: $danger, $alpha: 0.5);
+}
+
+.btn-light:focus,
+.btn-light.focus {
+  box-shadow: 0 0 0 0.2rem rgba($color: $light, $alpha: 0.5);
+}
+
+.btn-dark:focus,
+.btn-dark.focus {
+  box-shadow: 0 0 0 0.2rem rgba($color: $dark, $alpha: 0.5);
+}
+
+.btn-outline-primary:focus,
+.btn-outline-primary.focus {
+  box-shadow: 0 0 0 0.2rem rgba($color: $primary, $alpha: 0.5);
+}
+
+.btn-outline-secondary:focus,
+.btn-outline-secondary.focus {
+  box-shadow: 0 0 0 0.2rem rgba($color: $secondary, $alpha: 0.5);
+}
+
+.btn-outline-success:focus,
+.btn-outline-success.focus {
+  box-shadow: 0 0 0 0.2rem rgba($color: $green, $alpha: 0.5);
+}
+
+.btn-outline-info:focus,
+.btn-outline-info.focus {
+  box-shadow: 0 0 0 0.2rem rgba($color: $info, $alpha: 0.5);
+}
+
+.btn-outline-warning:focus,
+.btn-outline-warning.focus {
+  box-shadow: 0 0 0 0.2rem rgba($color: $warning, $alpha: 0.5);
+}
+
+.btn-outline-danger:focus,
+.btn-outline-danger.focus {
+  box-shadow: 0 0 0 0.2rem rgba($color: $danger, $alpha: 0.5);
+}
+
+.btn-outline-light:focus,
+.btn-outline-light.focus {
+  box-shadow: 0 0 0 0.2rem rgba($color: $light, $alpha: 0.5);
+}
+
+.btn-outline-dark:focus,
+.btn-outline-dark.focus {
+  box-shadow: 0 0 0 0.2rem rgba($color: $dark, $alpha: 0.5);
+}
+
+.btn:focus,
+.btn.focus,
+.btn-link:focus {
+  box-shadow: 0 0 0 0.2rem rgba($color: $primary, $alpha: 0.5);
+}
+
+.btn.text-reset {
+  display: flex;
+  align-items: center;
+}
+
+.nav-tabs .dropdown-menu {
+  border-radius: .5rem;
+}
+
+.modal-header .close {
+  border-radius: .35rem;
+  line-height: 1rem;
+  margin: -10px;
+}
+
+.page-link:focus {
+  box-shadow: 0 0 0 0.2rem rgba($color: $primary, $alpha: 0.5);
+}

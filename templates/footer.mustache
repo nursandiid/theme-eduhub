@@ -1,0 +1,92 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_eduhub/footer
+
+    EduHub footer template.
+
+    Example context (json):
+    {
+        
+    }
+}}
+<footer id="page-footer">
+    <div class="footer-1 text-white">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6 text-white-80">
+                    <div class="footer-logo mb-4">
+                        {{# output.should_display_navbar_logo }}
+                            <img src="{{output.get_compact_logo_url}}" alt="{{sitename}}" style="height: 60px;">
+                        {{/ output.should_display_navbar_logo }}
+                        {{^ output.should_display_navbar_logo }}
+                            {{{ sitename }}}
+                        {{/ output.should_display_navbar_logo }}
+                    </div>
+                    <p>329 Queensberry Street, North Melbourne</p>
+                    <p class="mb-1"><i class="fas fa-phone mr-2"></i> <a href="#" class="text-light text-decoration-none">+62 1232323221</a> </p>
+                    <p class="mb-lg-1 mb-4"><i class="fas fa-envelope mr-2"></i> <a href="#" class="text-light text-decoration-none">support@eduhub.com</a> </p>
+                </div>
+                <div class="col-lg-3 col-sm-6 text-white-80">
+                    <h5 class="mb-lg-4 mb-2">Company</h5>
+                    <p class="mb-1">
+                        <a href="#" class="text-light text-decoration-none">About Us </a>
+                    </p>
+                    <p class="mb-1">
+                        <a href="#" class="text-light text-decoration-none">Blog </a>
+                    </p>
+                    <p class="mb-lg-1 mb-4">
+                        <a href="#" class="text-light text-decoration-none">Contact </a>
+                    </p>
+                </div>
+                <div class="col-lg-3 col-sm-6 text-white-80">
+                    <h5 class="mb-lg-4 mb-2">Support</h5>
+                    <p class="mb-1">
+                        <a href="#" class="text-light text-decoration-none">Documentation</a>
+                    </p>
+                    <p class="mb-lg-1 mb-4">
+                        <a href="#" class="text-light text-decoration-none">Forums</a>
+                    </p>
+                </div>
+                <div class="col-lg-3 col-sm-6 text-white-80">
+                    <h5 class="mb-lg-4 mb-2">Newslatter</h5>
+                    <form action="#" method="post" class="input-group mb-3">
+                        <input type="text" name="email" class="form-control" placeholder="Enter your email" value="">
+                        <input type="hidden" name="_token">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary px-3"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-2 text-white">
+        <div class="container pt-3">
+            <div class="text-center">
+                <p>Copyright &copy; 2023 EduHub Moodle Theme by Nursandi. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+{{#js}}
+require(['theme_boost/footer-popover'], function(FooterPopover) {
+    FooterPopover.init();
+});
+{{/js}}
