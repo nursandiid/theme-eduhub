@@ -1,0 +1,85 @@
+.login-background {
+  overflow: hidden;
+
+  #page {
+    background-image: url([[pix:theme|achievements/1]]);
+    background-size: cover;
+    background-position: right center;
+
+    &::before {
+      background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.25));
+      content: "";
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 0;
+    }
+
+    .login-logo {
+      height: 80px;
+    }
+
+    .login-form-submit,
+    .login-form-forgotpassword {
+      display: inline-block;
+    }
+
+    .login-form-forgotpassword {
+      float: right;
+      padding-top: .75rem;
+
+      &::after {
+        clear: both;
+        content: '';
+      }
+    }
+
+    h2.login-heading {
+      font-size: 1rem;
+      font-weight: normal;
+    }
+
+    #loginguestbtn {
+      background-color: transparent;
+      border: 0;
+      color: $primary;
+      padding: 0;
+      font-size: 1rem;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+        outline: none;
+        box-shadow: none;
+      }
+    }
+
+    .d-flex {
+      width: 100%;
+      justify-content: space-between;
+      align-content: center;
+    }
+
+    #page-content {
+      margin: auto;
+    }
+
+    .login-container {
+      border-radius: .5rem;
+      padding: 2rem;
+      transition: padding .3s ease-in;
+    }
+
+    @media (max-width: 575.98px) {
+      .login-container {
+        padding: 1.5rem;
+      }
+    }
+
+    label {
+      white-space: nowrap;
+    }
+  }
+}

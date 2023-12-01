@@ -1,0 +1,45 @@
+<section id="our-top-courses" class="bg-white">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="main-title text-center">
+                    <h3 class="h1">Browse Our Top Courses</h3>
+                    <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            {{# courselist }}
+            <div class="col-md-6 col-lg-4 col-xl-3 mb-lg-5 mb-3">
+                <div class="top_courses card rounded shadow-sm border-0 overflow-hidden">
+                    <a href="/course/view.php?id={{ id }}">
+                        <div class="thumb">
+                            <img class="img-whp w-100"
+                                src="{{ image_url }}"
+                                alt="{{ fullname }}">
+                        </div>
+                        <div class="details px-3">
+                            <div class="overlay">
+                                {{# category }}
+                                <small>{{ category }}</small>
+                                {{/ category }}
+                                {{^ category }}
+                                <small>-</small>
+                                {{/ category }}
+                            </div>
+                            <div class="tc_content">
+                                <p class="font-weight-bold">{{ fullname }}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {{/ courselist }}
+
+            <div class="col-12 text-center mt-5">
+                <a href="/course" class="btn btn-outline-primary btn-lg rounded-pill px-5">View all courses</a>
+            </div>
+        </div>
+    </div>
+</section>

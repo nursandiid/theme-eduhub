@@ -108,6 +108,15 @@
   margin: -10px;
 }
 
+.alert .close {
+  border-radius: .35rem;
+  margin: 6px;
+}
+
 .page-link:focus {
   box-shadow: 0 0 0 0.2rem rgba($color: $primary, $alpha: 0.5);
+}
+
+.text-truncate {
+  overflow: visible !important;
 }

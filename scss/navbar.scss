@@ -7,11 +7,12 @@
   }
 
   .primary-navigation .navigation .nav-link {
-    height: 61px;
-    box-shadow: none;
+    height: 59px;
+    border: 0;
+    margin: auto 2px;
 
-    &:hover {
-      border-bottom-color: $primary;
+    &.active {
+      font-weight: bold;
     }
   }
 
@@ -21,7 +22,7 @@
   }
 
   .usermenu .dropdown-menu {
-    margin-top: -4px;
+    margin-top: 1px;
   }
 
   #nav-notification-popover-container {
@@ -29,7 +30,7 @@
   }
 
   .popover-region-container {
-    top: 58px;
+    top: 62px;
   }
 
   .popover-region-container {

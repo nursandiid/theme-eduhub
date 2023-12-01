@@ -27,8 +27,8 @@
 
 <nav class="navbar fixed-top navbar-light bg-white navbar-expand" aria-label="{{#str}}sitemenubar, admin{{/str}}">
 
-    <div class="container">
-        <button class="navbar-toggler aabtn d-block d-md-none px-1 my-1 border-0" data-toggler="drawers" data-action="toggle" data-target="theme_boost-drawers-primary">
+    <div class="container-fluid">
+        <button class="navbar-toggler btn d-block d-md-none px-1 my-1 border-0" data-toggler="drawers" data-action="toggle" data-target="theme_boost-drawers-primary">
             <span class="navbar-toggler-icon"></span>
             <span class="sr-only">{{#str}}sidepanel, core{{/str}}</span>
         </button>
@@ -43,7 +43,7 @@
             {{/ output.should_display_navbar_logo }}
         </a>
         {{#primarymoremenu}}
-            <div class="primary-navigation">
+            <div class="primary-navigation d-sm-none d-lg-block">
                 {{> core/moremenu}}
             </div>
         {{/primarymoremenu}}

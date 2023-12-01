@@ -83,41 +83,8 @@ $regionmainsettingsmenu = $buildregionmainsettings ? $OUTPUT->region_main_settin
 $header = $PAGE->activityheader;
 $headercontent = $header->export_for_template($renderer);
 
-// Create a fake context for the front page
-$fullCourse = array_values(get_courses('all', 'fullname ASC', 'c.id, c.fullname'));
-
-// Process courses to get detailed information
-$courselist = [];
-foreach ($fullCourse as $key => $course) {
-    // Get more details about each course
-    $courseDetails = new stdClass();
-    $courseDetails->id = $course->id;
-    $courseDetails->fullname = $course->fullname;
-
-    // Example: Get category information
-    $category = core_course_category::get($course->category);
-    $courseDetails->category = $category->name;
-
-    // Example: Get course image URL
-    // Note: Adjust the image property based on your Moodle version
-    $image = course_get_courseimage($course);
-    if ($image) {
-        $imageUrl = "{$CFG->wwwroot}/pluginfile.php/{$image->get_contextid()}/{$image->get_component()}/{$image->get_filearea()}/{$image->get_filename()}";
-
-        $courseDetails->image_url = $imageUrl;
-    } else {
-        $courseDetails->image_url = $OUTPUT->image_url('thumbnails/1', 'theme');
-    }
-
-    $courselist[] = $courseDetails;
-
-    if ($key + 1 == 8) {
-        break;
-    }
-}
-
 $templatecontext = [
-    'sitename' => format_string($SITE->shortname, true, ['context' => \core\context\course::instance(SITEID), "escape" => false]),
+    'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
     'sidepreblocks' => $blockshtml,
     'hasblocks' => $hasblocks,
@@ -135,27 +102,7 @@ $templatecontext = [
     'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
     'overflow' => $overflow,
     'headercontent' => $headercontent,
-    'addblockbutton' => $addblockbutton,
-    'courselist' => $courselist,
-    'testimonials' => [
-        'testimonial1' => $OUTPUT->image_url('testimonials/1', 'theme'),
-        'testimonial2' => $OUTPUT->image_url('testimonials/2', 'theme'),
-        'testimonial3' => $OUTPUT->image_url('testimonials/3', 'theme'),
-        'testimonial4' => $OUTPUT->image_url('testimonials/4', 'theme'),
-        'testimonial5' => $OUTPUT->image_url('testimonials/5', 'theme'),
-        'testimonial6' => $OUTPUT->image_url('testimonials/6', 'theme')
-    ],
-    'slides' => [
-        'slide1' => $OUTPUT->image_url('slides/1', 'theme'),
-        'slide2' => $OUTPUT->image_url('slides/2', 'theme'),
-        'slide3' => $OUTPUT->image_url('slides/3', 'theme')
-    ],
-    'features' => [
-        'feature1' => $OUTPUT->image_url('features/1', 'theme'),
-        'feature2' => $OUTPUT->image_url('features/2', 'theme'),
-        'feature3' => $OUTPUT->image_url('features/3', 'theme'),
-        'feature4' => $OUTPUT->image_url('features/4', 'theme'),
-    ],
+    'addblockbutton' => $addblockbutton
 ];
 
-echo $OUTPUT->render_from_template('theme_eduhub/frontpage', $templatecontext);
+echo $OUTPUT->render_from_template('theme_eduhub/drawers', $templatecontext);

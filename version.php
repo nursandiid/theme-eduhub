@@ -17,7 +17,7 @@
 /**
  *
  * @package    theme_eduhub
- * @author     2023 Nursandi
+ * @copyright  2023 Nursandi
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

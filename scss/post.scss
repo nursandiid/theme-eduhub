@@ -1,23 +1,109 @@
 @import "preset";
 @import "utilities";
 @import "navbar";
-@import "footer";
 @import "frontpage";
+@import "login";
+
+body {
+  background-color: #f2f3f7 !important;
+}
+
+@media (min-width: 768px) {
+  #page.drawers .main-inner {
+    padding: 1.5rem 2.5rem;
+  }
+}
+
+#page {
+
+  // footer debugging
+  #page-footer {
+    background-color: transparent !important;
+    max-width: 100% !important;
+    margin-top: 1rem;
+
+    .footer-content-debugging:has(.container-fluid div) {
+      border-radius: .5rem;
+      padding-top: .5rem;
+    }
+  }
+}
+
+.btn-footer-popover {
+  background-color: $white !important;
+  box-shadow: $box-shadow-sm;
+
+  &:hover {
+    background-color: rgba($color: $white, $alpha: .9) !important;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 .2rem rgba($color: $primary, $alpha: .5);
+  }
+}
+
+#page-header {
+  padding: 0;
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+}
+
+#page-content {
+
+  #region-main {
+    margin-top: 1rem;
+
+    .navitem.dropdown #moreactionsmenu {
+      right: 0;
+      left: auto !important;
+    }
+  }
+
+}
+
+@media (min-width: 768px) {
+  .header-maxwidth {
+    max-width: 100%;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .secondary-navigation .navigation {
+    padding: 0 calc(0.5rem);
+  }
+}
 
 /* ------------- SECONDARY NAVIGATION ------------- */
 .secondary-navigation {
   padding-bottom: 0;
+  margin: auto .5rem;
+  margin-bottom: 1rem;
+  border-radius: .5rem;
 
-  .moremenu .nav-link:hover,
-  .moremenu .nav-link:focus {
-    border-bottom-color: $primary;
+  .navigation {
+    border-radius: .5rem;
+    border: 1px solid rgba(0, 0, 0, .125);
+    height: 62px;
   }
 
-  .moremenu .nav-link {
-    height: 60px;
-    box-shadow: none;
+  .nav-tabs {
+    max-width: 100% !important;
+  }
+
+  .nav-link {
+    border: 0;
+
+    &.active {
+      font-weight: bold;
+    }
   }
 }
+
 /* ------------- END SECONDARY NAVIGATION ------------- */
 
 /* ------------- SETTINGS FORM ------------- */
@@ -42,4 +128,5 @@
     box-shadow: none;
   }
 }
+
 /* ------------- END SETTINGS FORM ------------- */
