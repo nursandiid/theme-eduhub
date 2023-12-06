@@ -37,9 +37,15 @@
                             {{{ sitename }}}
                         {{/ output.should_display_navbar_logo }}
                     </div>
-                    <p>329 Queensberry Street, North Melbourne</p>
-                    <p class="mb-1"><i class="fas fa-phone mr-2"></i> <a href="#" class="text-light text-decoration-none">+62 1232323221</a> </p>
-                    <p class="mb-lg-1 mb-4"><i class="fas fa-envelope mr-2"></i> <a href="#" class="text-light text-decoration-none">support@eduhub.com</a> </p>
+                    <p>{{ footer_address }}</p>
+                    <p class="mb-1">
+                        <i class="fas fa-phone mr-2"></i> 
+                        <a href="https://wa.me/{{ footer_phone }}" target="_blank" class="text-light text-decoration-none">{{ footer_phone }}</a> 
+                    </p>
+                    <p class="mb-lg-1 mb-4">
+                        <i class="fas fa-envelope mr-2"></i> 
+                        <a href="mailto:{{ footer_email }}" target="_blank" class="text-light text-decoration-none">{{ footer_email }}</a> 
+                    </p>
                 </div>
                 <div class="col-lg-3 col-sm-6 text-white-80">
                     <h5 class="mb-lg-4 mb-2">Company</h5>
@@ -79,7 +85,7 @@
     <div class="footer-2 text-white">
         <div class="container pt-3">
             <div class="text-center">
-                <p>Copyright &copy; 2023 EduHub Moodle Theme by Nursandi. All Rights Reserved.</p>
+                <p>Copyright &copy; {{ current_year }} EduHub Moodle Theme by Nursandi. All Rights Reserved.</p>
             </div>
         </div>
     </div>

@@ -84,3 +84,5 @@ $THEME->layouts = [
         'options' => array('nonavbar' => true),
     )
 ];
+
+$THEME->extrascsscallback = 'theme_eduhub_get_extra_scss';

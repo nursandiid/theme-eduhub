@@ -29,25 +29,9 @@ body {
   }
 }
 
-.btn-footer-popover {
-  background-color: $white !important;
-  box-shadow: $box-shadow-sm;
-
-  &:hover {
-    background-color: rgba($color: $white, $alpha: .9) !important;
-  }
-
-  &:focus {
-    box-shadow: 0 0 0 .2rem rgba($color: $primary, $alpha: .5);
-  }
-}
-
 #page-header {
   padding: 0;
-
-  h1 {
-    margin-bottom: 1rem;
-  }
+  margin-bottom: .75rem;
 }
 
 #page-content {
@@ -59,8 +43,47 @@ body {
       right: 0;
       left: auto !important;
     }
+
+    h2 {
+      margin-left: 15px;
+    }
+
+    div[role="main"] h2 {
+      margin-left: 0;
+    }
+
+    #user-notifications {
+      overflow: visible;
+
+      .alert {
+        margin: 0 1rem .5rem 1rem;
+      }
+    }
+
+    #message-user-button {
+      border-radius: .5rem;
+    }
+
   }
 
+}
+
+.btn-footer-popover {
+  background-color: $white !important;
+  box-shadow: $box-shadow-sm;
+
+  &.bg-secondary {
+    background-color: $white !important;
+  }
+
+  &.bg-secondary:hover {
+    background-color: $gray-200 !important;
+  }
+
+  &.bg-secondary:focus {
+    background-color: $gray-200 !important;
+    box-shadow: 0 0 0 .2rem rgba($color: $primary, $alpha: .5);
+  }
 }
 
 @media (min-width: 768px) {
@@ -72,9 +95,37 @@ body {
   }
 }
 
-@media (min-width: 768px) {
-  .secondary-navigation .navigation {
-    padding: 0 calc(0.5rem);
+// Message
+a[data-conversation-id] {
+  &:hover {
+    color: initial !important;
+  }
+}
+
+.content-message-container {
+  [data-region="selected-icon"],
+  [data-region="not-selected-icon"] {
+    margin-left: 0 !important;
+  }
+
+  .text-right.time {
+    position: absolute;
+    right: .5rem;
+    top: .5rem;
+  }
+}
+
+.message-app .message.send {
+  margin-right: 1rem !important;
+}
+
+// Chat emoji
+.emoji-picker {
+
+  .form-control:focus,
+  .btn:focus {
+    box-shadow: none;
+    border-color: $secondary !important;
   }
 }
 
@@ -91,12 +142,20 @@ body {
     height: 62px;
   }
 
+  @media (min-width: 768px) {
+    .navigation {
+      padding: 0 calc(0.5rem);
+    }
+  }
+
   .nav-tabs {
     max-width: 100% !important;
   }
 
   .nav-link {
     border: 0;
+    margin: auto 2px;
+    transition: .1s font-weight ease-in;
 
     &.active {
       font-weight: bold;
@@ -115,7 +174,7 @@ body {
   .nav-link:hover,
   .nav-link:focus {
     border-color: transparent;
-    background-color: #f8f9fa;
+    background-color: $gray-100;
   }
 
   .nav-link.active,

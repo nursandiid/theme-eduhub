@@ -2,6 +2,12 @@
   outline: none !important;
 }
 
+.btn:focus,
+.btn.focus,
+.btn-link:focus {
+  box-shadow: 0 0 0 0.2rem rgba($color: $primary, $alpha: 0.5);
+}
+
 .form-control:focus,
 .custom-select:focus {
   box-shadow: 0 0 0 0.2rem rgba($color: $primary, $alpha: 0.5);
@@ -87,12 +93,6 @@
   box-shadow: 0 0 0 0.2rem rgba($color: $dark, $alpha: 0.5);
 }
 
-.btn:focus,
-.btn.focus,
-.btn-link:focus {
-  box-shadow: 0 0 0 0.2rem rgba($color: $primary, $alpha: 0.5);
-}
-
 .btn.text-reset {
   display: flex;
   align-items: center;
@@ -109,8 +109,7 @@
 }
 
 .alert .close {
-  border-radius: .35rem;
-  margin: 6px;
+  border-radius: .5rem;
 }
 
 .page-link:focus {
@@ -119,4 +118,12 @@
 
 .text-truncate {
   overflow: visible !important;
+}
+
+.moodle-dialogue-base .moodle-dialogue-wrap {
+  border-radius: .6rem;
+
+  .closebutton {
+    margin: -.7rem -.7rem -1rem auto;
+  }
 }

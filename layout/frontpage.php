@@ -27,6 +27,9 @@ defined('MOODLE_INTERNAL') || die();
 require_once($_SERVER['DOCUMENT_ROOT'] . '/global_vars.php');
 require_once($CFG->libdir . '/behat/lib.php');
 require_once($CFG->dirroot . '/course/lib.php');
+require_once(__DIR__ . '/../lib/frontpage_settings.php');
+require_once(__DIR__ . '/../lib/footer_settings.php');
+
 
 // Add block button in editing mode.
 $addblockbutton = $OUTPUT->addblockbutton();
@@ -84,7 +87,7 @@ $header = $PAGE->activityheader;
 $headercontent = $header->export_for_template($renderer);
 
 // Create a fake context for the front page
-$fullCourse = array_values(get_courses('all', 'fullname ASC', 'c.id, c.fullname'));
+$fullCourse = array_values(get_courses('all', 'timecreated DESC', 'c.*'));
 
 // Process courses to get detailed information
 $courselist = [];
@@ -97,6 +100,10 @@ foreach ($fullCourse as $key => $course) {
     // Example: Get category information
     $category = core_course_category::get($course->category);
     $courseDetails->category = $category->name;
+
+    if ($courseDetails->category === 'Pages') {
+        continue;
+    }
 
     // Example: Get course image URL
     // Note: Adjust the image property based on your Moodle version
@@ -111,7 +118,7 @@ foreach ($fullCourse as $key => $course) {
 
     $courselist[] = $courseDetails;
 
-    if ($key + 1 == 8) {
+    if (count($courselist) === 8) {
         break;
     }
 }
@@ -137,25 +144,39 @@ $templatecontext = [
     'headercontent' => $headercontent,
     'addblockbutton' => $addblockbutton,
     'courselist' => $courselist,
-    'testimonials' => [
-        'testimonial1' => $OUTPUT->image_url('testimonials/1', 'theme'),
-        'testimonial2' => $OUTPUT->image_url('testimonials/2', 'theme'),
-        'testimonial3' => $OUTPUT->image_url('testimonials/3', 'theme'),
-        'testimonial4' => $OUTPUT->image_url('testimonials/4', 'theme'),
-        'testimonial5' => $OUTPUT->image_url('testimonials/5', 'theme'),
-        'testimonial6' => $OUTPUT->image_url('testimonials/6', 'theme')
-    ],
-    'slides' => [
-        'slide1' => $OUTPUT->image_url('slides/1', 'theme'),
-        'slide2' => $OUTPUT->image_url('slides/2', 'theme'),
-        'slide3' => $OUTPUT->image_url('slides/3', 'theme')
-    ],
-    'features' => [
-        'feature1' => $OUTPUT->image_url('features/1', 'theme'),
-        'feature2' => $OUTPUT->image_url('features/2', 'theme'),
-        'feature3' => $OUTPUT->image_url('features/3', 'theme'),
-        'feature4' => $OUTPUT->image_url('features/4', 'theme'),
-    ],
+    'images' => [
+        'testimonials' => [
+            'testimonial1' => $OUTPUT->image_url('testimonials/1', 'theme'),
+            'testimonial2' => $OUTPUT->image_url('testimonials/2', 'theme'),
+            'testimonial3' => $OUTPUT->image_url('testimonials/3', 'theme'),
+            'testimonial4' => $OUTPUT->image_url('testimonials/4', 'theme'),
+            'testimonial5' => $OUTPUT->image_url('testimonials/5', 'theme'),
+            'testimonial6' => $OUTPUT->image_url('testimonials/6', 'theme')
+        ],
+        'slides' => [
+            'slide1' => $OUTPUT->image_url('slides/1', 'theme'),
+            'slide2' => $OUTPUT->image_url('slides/2', 'theme'),
+            'slide3' => $OUTPUT->image_url('slides/3', 'theme')
+        ],
+        'features' => [
+            'feature1' => $OUTPUT->image_url('features/1', 'theme'),
+            'feature2' => $OUTPUT->image_url('features/2', 'theme'),
+            'feature3' => $OUTPUT->image_url('features/3', 'theme'),
+            'feature4' => $OUTPUT->image_url('features/4', 'theme'),
+        ],
+    ]
 ];
+
+$theme = theme_config::load('eduhub');
+
+$templatecontext = array_merge($templatecontext, theme_eduhub_slider($theme));
+$templatecontext = array_merge($templatecontext, theme_eduhub_course($theme));
+$templatecontext = array_merge($templatecontext, theme_eduhub_category($theme));
+$templatecontext = array_merge($templatecontext, theme_eduhub_feature($theme));
+$templatecontext = array_merge($templatecontext, theme_eduhub_achievement($theme));
+$templatecontext = array_merge($templatecontext, theme_eduhub_testimonial($theme));
+$templatecontext = array_merge($templatecontext, theme_eduhub_partner($theme));
+$templatecontext = array_merge($templatecontext, theme_eduhub_footer($theme));
+$templatecontext = array_merge($templatecontext, theme_eduhub_footer_select($theme));
 
 echo $OUTPUT->render_from_template('theme_eduhub/frontpage', $templatecontext);

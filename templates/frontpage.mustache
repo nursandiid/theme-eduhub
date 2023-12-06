@@ -25,13 +25,27 @@
 
     {{> theme_eduhub/navbar }}
 
-    {{> theme_eduhub/frontpage/banner }}
-    {{> theme_eduhub/frontpage/our-top-courses }}
-    {{> theme_eduhub/frontpage/feature }}
-    {{> theme_eduhub/frontpage/scholl-achievements }}
-    {{> theme_eduhub/frontpage/testimonials }}
+    {{#slider_enabled}}
+        {{> theme_eduhub/frontpage/banner }}
+    {{/slider_enabled}}
 
-    <div id="page" data-region="mainpage" data-usertour="scroller" class="drawers drag-container bg-white d-none">
+    {{#course_enabled}}
+        {{> theme_eduhub/frontpage/our-top-courses }}
+    {{/course_enabled}}
+
+    {{#feature_enabled}}
+        {{> theme_eduhub/frontpage/feature }}
+    {{/feature_enabled}}
+
+    {{#achievement_enabled}}
+        {{> theme_eduhub/frontpage/scholl-achievements }}
+    {{/achievement_enabled}}
+
+    {{#testimonial_enabled}}
+        {{> theme_eduhub/frontpage/testimonials }}
+    {{/testimonial_enabled}}
+
+    <div id="page" data-region="mainpage" data-usertour="scroller" class="drawers drag-container d-none overflow-hidden" style="height: 0;">
         <div id="topofscroll">
             <div id="page-content" class="d-print-block main-inner">
                 <div id="region-main-box">
@@ -43,10 +57,12 @@
         </div>
     </div>
 
-    {{> theme_eduhub/footer }}
+    {{# footer_enabled }}
+        {{> theme_eduhub/frontpage/footer }}
+    {{/ footer_enabled }}
     
-    {{{ output.standard_after_main_region_html }}}
     {{{ output.standard_end_of_body_html }}}
+    {{{ output.standard_after_main_region_html }}}
 </div>
 
 </body>

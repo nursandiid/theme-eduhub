@@ -27,6 +27,12 @@ defined('MOODLE_INTERNAL') || die();
 
 // We will add callbacks here as we add features to our theme.
 
+/**
+ * Get SCSS files.
+ * 
+ * @param theme_config $theme
+ * @return string
+ */
 function theme_eduhub_get_main_scss_content($theme)
 {
     global $CFG;
@@ -57,4 +63,65 @@ function theme_eduhub_get_main_scss_content($theme)
 
     // Combine them together.                                                                                                       
     return $pre . "\n" . $scss . "\n" . $post;
+}
+
+/**
+ * Inject additional SCSS.
+ *
+ * @param theme_config $theme
+ * @return string
+ */
+function theme_eduhub_get_extra_scss($theme)
+{
+    $content = '';
+
+    // Sets the login background image.
+    $login_background_image_url = $theme->setting_file_url('login_background_image', 'login_background_image');
+    if (!empty($login_background_image_url)) {
+        $content .= 'body.pagelayout-login #page { ';
+        $content .= "background-image: url('$login_background_image_url'); background-size: cover;";
+        $content .= ' }';
+    }
+
+    // Always return the background image with the scss when we have it.
+    return !empty($theme->settings->scss) ? $theme->settings->scss . ' ' . $content : $content;
+}
+
+/**
+ * Serves any files associated with the theme settings.
+ *
+ * @param stdClass $course
+ * @param stdClass $cm
+ * @param context $context
+ * @param string $filearea
+ * @param array $args
+ * @param bool $forcedownload
+ * @param array $options
+ * @return bool
+ */
+function theme_eduhub_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array())
+{
+    $theme = theme_config::load('eduhub');
+    $slidercount = $theme->settings->slider_count;
+    $files = [
+        'login_background_image'
+    ];
+
+    for ($i = 1, $j = 0; $i <= $slidercount; $i++, $j++) {
+        $files[] = "slider_image_{$i}";
+    }
+
+    if (
+        $context->contextlevel == CONTEXT_SYSTEM && in_array($filearea, $files)
+    ) {
+        $theme = theme_config::load('eduhub');
+        // By default, theme files must be cache-able by both browsers and proxies.
+        if (!array_key_exists('cacheability', $options)) {
+            $options['cacheability'] = 'public';
+        }
+
+        return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
+    } else {
+        send_file_not_found();
+    }
 }

@@ -27,6 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 require_once($_SERVER['DOCUMENT_ROOT'] . '/global_vars.php');
 require_once($CFG->libdir . '/behat/lib.php');
 require_once($CFG->dirroot . '/course/lib.php');
+require_once(__DIR__ . '/../lib/footer_settings.php');
 
 // Add block button in editing mode.
 $addblockbutton = $OUTPUT->addblockbutton();
@@ -104,5 +105,10 @@ $templatecontext = [
     'headercontent' => $headercontent,
     'addblockbutton' => $addblockbutton
 ];
+
+$theme = theme_config::load('eduhub');
+
+// Footer select dashboard .
+$templatecontext = array_merge($templatecontext, theme_eduhub_footer_select($theme));
 
 echo $OUTPUT->render_from_template('theme_eduhub/drawers', $templatecontext);

@@ -19,6 +19,10 @@
 
     .login-logo {
       height: 80px;
+
+      #logoimage {
+        cursor: pointer;
+      }
     }
 
     .login-form-submit,
@@ -47,12 +51,22 @@
       color: $primary;
       padding: 0;
       font-size: 1rem;
+      padding: 0;
+      border-radius: 0;
 
-      &:hover,
-      &:focus {
+      &:hover {
         text-decoration: underline;
-        outline: none;
-        box-shadow: none;
+      }
+
+      &:focus {
+        outline: .2rem solid transparent;
+        color: #1d2125;
+        background-color: #c6e7c4;
+        box-shadow: 0 -.2rem #c6e7c4, 0 .2rem #343a40;
+
+        &:hover {
+          text-decoration: none;
+        }
       }
     }
 
@@ -80,6 +94,17 @@
 
     label {
       white-space: nowrap;
+    }
+
+    @media (min-width: 576px) {
+      .form-inline .form-control {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    .mform fieldset:last-child {
+      border-bottom: 0;
     }
   }
 }
