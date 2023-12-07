@@ -108,7 +108,10 @@ $templatecontext = [
 
 $theme = theme_config::load('eduhub');
 
-// Footer select dashboard .
+// Course page header img.
+$templatecontext = array_merge($templatecontext, $OUTPUT->eduhub_course_header_img());
+
+// Footer select dashboard.
 $templatecontext = array_merge($templatecontext, theme_eduhub_footer_select($theme));
 
 echo $OUTPUT->render_from_template('theme_eduhub/drawers', $templatecontext);

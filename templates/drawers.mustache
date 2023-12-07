@@ -98,12 +98,30 @@
                     </div>
                 {{/hasblocks}}
             </div>
-            {{{ output.full_header }}}
+            
+            {{#course_header_img}}
+            <div class="page-header-wrapper has-course-header-image">
+                <div class="course-header-bg">
+                    <div class="course-header-image" 
+                        style="background-image: url('{{{course_header_img}}}');">
+                    </div>
+                    <div class="course-header-txt">
+                        {{{ output.full_header }}}
+                    </div>
+                </div>    
+            </div>
+            {{/ course_header_img}}
+
+            {{^course_header_img}}
+                {{{ output.full_header }}}
+            {{/course_header_img}}
+            
             {{#secondarymoremenu}}
                 <div class="secondary-navigation d-print-none">
                     {{> core/moremenu}}
                 </div>
             {{/secondarymoremenu}}
+
             <div id="page-content" class="p-3 p-md-0 pb-md-3 d-print-block card border overflow-hidden">
                 <div id="region-main-box">
                     {{#hasregionmainsettingsmenu}}
