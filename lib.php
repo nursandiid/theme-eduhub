@@ -79,7 +79,15 @@ function theme_eduhub_get_extra_scss($theme)
     $login_background_image_url = $theme->setting_file_url('login_background_image', 'login_background_image');
     if (!empty($login_background_image_url)) {
         $content .= 'body.pagelayout-login #page { ';
-        $content .= "background-image: url('$login_background_image_url'); background-size: cover;";
+        $content .= "background-image: url('$login_background_image_url');";
+        $content .= ' }';
+    }
+
+    // Sets the achievement background image.
+    $achievement_background_image_url = $theme->setting_file_url('achievement_background_image', 'achievement_background_image');
+    if (!empty($achievement_background_image_url)) {
+        $content .= '#scholl-achievements { ';
+        $content .= "background-image: url('$achievement_background_image_url');";
         $content .= ' }';
     }
 
@@ -102,13 +110,23 @@ function theme_eduhub_get_extra_scss($theme)
 function theme_eduhub_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array())
 {
     $theme = theme_config::load('eduhub');
-    $slidercount = $theme->settings->slider_count;
     $files = [
-        'login_background_image'
+        'login_background_image',
+        'achievement_background_image'
     ];
 
-    for ($i = 1, $j = 0; $i <= $slidercount; $i++, $j++) {
+    $slidercount = $theme->settings->slider_count;
+    for ($i = 1; $i <= $slidercount; $i++) {
         $files[] = "slider_image_{$i}";
+    }
+
+    for ($i = 1; $i <= 4; $i++) {
+        $files[] = "feature_block_image_{$i}";
+    }
+
+    $total_users = get_config('theme_eduhub', 'testimonial_total_users');
+    for ($i = 1; $i <= $total_users; $i++) {
+        $files[] = "testimonial_slider_image_{$i}";
     }
 
     if (

@@ -152,18 +152,7 @@ $templatecontext = [
             'testimonial4' => $OUTPUT->image_url('testimonials/4', 'theme'),
             'testimonial5' => $OUTPUT->image_url('testimonials/5', 'theme'),
             'testimonial6' => $OUTPUT->image_url('testimonials/6', 'theme')
-        ],
-        'slides' => [
-            'slide1' => $OUTPUT->image_url('slides/1', 'theme'),
-            'slide2' => $OUTPUT->image_url('slides/2', 'theme'),
-            'slide3' => $OUTPUT->image_url('slides/3', 'theme')
-        ],
-        'features' => [
-            'feature1' => $OUTPUT->image_url('features/1', 'theme'),
-            'feature2' => $OUTPUT->image_url('features/2', 'theme'),
-            'feature3' => $OUTPUT->image_url('features/3', 'theme'),
-            'feature4' => $OUTPUT->image_url('features/4', 'theme'),
-        ],
+        ]
     ]
 ];
 
@@ -178,5 +167,8 @@ $templatecontext = array_merge($templatecontext, theme_eduhub_testimonial($theme
 $templatecontext = array_merge($templatecontext, theme_eduhub_partner($theme));
 $templatecontext = array_merge($templatecontext, theme_eduhub_footer($theme));
 $templatecontext = array_merge($templatecontext, theme_eduhub_footer_select($theme));
+
+// var_dump(theme_eduhub_testimonial($theme));
+// die;
 
 echo $OUTPUT->render_from_template('theme_eduhub/frontpage', $templatecontext);

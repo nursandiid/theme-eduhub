@@ -63,4 +63,23 @@ let logoimage = document.querySelector('#logoimage')
 logoimage?.addEventListener('click', () => {
     window.location = '/'
 })
+
+// Select the .login-container element
+var loginContainer = document.querySelector('.login-container')
+let url = window.location.pathname
+
+// Check if the element is found
+if (loginContainer && url.includes('forgot_password.php')) {
+    let linkText = document.createElement('button')
+    linkText.textContent = 'Back to login page'
+    linkText.type = 'button'
+
+    linkText.classList.add('back-to-login')
+
+    loginContainer.appendChild(linkText)
+
+    linkText.addEventListener('click', function() {
+        window.location.href = '/login'
+    })
+}
 {{/js}}

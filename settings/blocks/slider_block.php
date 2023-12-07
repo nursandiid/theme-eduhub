@@ -17,7 +17,7 @@
 
 /**
  *
- *  @package    theme_eduhub
+ * @package    theme_eduhub
  * @copyright  2023 Nursandi
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -85,7 +85,7 @@ function eduhub_slider_setting($page)
         $name = 'theme_eduhub/slider_image_' . $count;
         $title = get_string('slider_image', 'theme_eduhub');
         $description = get_string('slider_image_desc', 'theme_eduhub');
-        $opts = array('accepted_types' => array('.png', '.jpg', '.gif', '.webp', '.tiff', '.svg'), 'maxfiles' => 1);
+        $opts = array('accepted_types' => array('.png', '.jpg', '.jpeg'), 'maxfiles' => 1);
         $setting = new admin_setting_configstoredfile($name, $title, $description, $filearea, 0, $opts);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $page->add($setting);
