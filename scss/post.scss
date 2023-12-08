@@ -348,7 +348,7 @@ a[data-conversation-id] {
 
 // static page banner
 #static-page-banner {
-  min-height: 280px;
+  min-height: 320px;
   display: flex;
   align-items: flex-end;
   padding-bottom: 1rem;
@@ -372,5 +372,28 @@ a[data-conversation-id] {
   .container {
     position: relative;
     z-index: 1;
+    display: flex;
+    min-height: calc(320px - 2rem);
+
+    .overlay {
+      background: rgba($black, .25);
+      border-radius: .6rem;
+      display: inline-block !important;
+      padding: 1rem;
+      min-width: 400px;
+      border: 1px solid #f8f9fa38;
+      text-align: center;
+      margin: auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    & {
+      min-height: 240px;
+    }
+
+    .container {
+      min-height: calc(240px - 2rem);
+    }
   }
 }

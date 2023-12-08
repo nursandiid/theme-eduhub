@@ -176,7 +176,9 @@ if ($static_page['static_page_override_container']) {
         $page_header = '
             <div class="static-page-banner" id="static-page-banner">
                 <div class="container">
-                    <h2 class="fa-2x text-white">' . $static_page['static_page_title'] . '</h2>
+                    <div class="overlay">
+                        <h2 class="fa-2x text-white">' . $static_page['static_page_title'] . '</h2>
+                    </div>
                 </div>
             </div>
         ';
