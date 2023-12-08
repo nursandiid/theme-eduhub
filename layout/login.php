@@ -24,7 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/global_vars.php');
+require_once(__DIR__ . '/../global_vars.php');
 
 $bodyattributes = $OUTPUT->body_attributes();
 

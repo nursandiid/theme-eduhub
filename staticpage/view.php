@@ -22,13 +22,11 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-use MatthiasMullie\Minify\CSS;
-
-require_once($_SERVER['DOCUMENT_ROOT'] . '/config.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/global_vars.php');
+require_once($CFG->dirroot . '/config.php');
 require_once($CFG->libdir . '/blocklib.php');
 require_once($CFG->libdir . '/behat/lib.php');
 require_once($CFG->dirroot . '/course/lib.php');
+require_once(__DIR__ . '/../global_vars.php');
 require_once(__DIR__ . '/../lib/staticpage_settings.php');
 
 // Require login if the plugin or Moodle is configured to force login.

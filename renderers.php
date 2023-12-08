@@ -22,10 +22,9 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
- // This line protects the file from being accessed by a URL directly.    
+// This line protects the file from being accessed by a URL directly.    
 defined('MOODLE_INTERNAL') || die();
 
-require_once($_SERVER['DOCUMENT_ROOT'] . '/global_vars.php');
 require_once($CFG->dirroot . '/course/renderer.php');
 
 class theme_eduhub_core_course_renderer extends core_course_renderer
