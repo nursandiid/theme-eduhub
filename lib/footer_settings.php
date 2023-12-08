@@ -26,7 +26,7 @@
  * Footer select
  * 
  * @param theme_config $theme
- * @return string
+ * @return mixed
  */
 function theme_eduhub_footer_select($theme)
 {

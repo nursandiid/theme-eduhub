@@ -39,4 +39,5 @@ if ($ADMIN->fulltree) {
     require_once 'settings/advanced.php';
     require_once 'settings/theme.php';
     require_once 'settings/frontpage_settings.php';
+    require_once 'settings/static_page.php';
 }

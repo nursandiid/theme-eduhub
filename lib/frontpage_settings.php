@@ -25,7 +25,7 @@
 /**
  * 
  * @param theme_config $theme
- * @return string
+ * @return mixed
  */
 function theme_eduhub_slider($theme)
 {
@@ -67,7 +67,7 @@ function theme_eduhub_slider($theme)
 /**
  * 
  * @param theme_config $theme
- * @return string
+ * @return mixed
  */
 function theme_eduhub_course($theme)
 {
@@ -81,7 +81,7 @@ function theme_eduhub_course($theme)
 /**
  * 
  * @param theme_config $theme
- * @return string
+ * @return mixed
  */
 function theme_eduhub_category($theme)
 {
@@ -95,7 +95,7 @@ function theme_eduhub_category($theme)
 /**
  * 
  * @param theme_config $theme
- * @return string
+ * @return mixed
  */
 function theme_eduhub_feature($theme)
 {
@@ -132,7 +132,7 @@ function theme_eduhub_feature($theme)
 /**
  * 
  * @param theme_config $theme
- * @return string
+ * @return mixed
  */
 function theme_eduhub_achievement($theme)
 {
@@ -150,7 +150,7 @@ function theme_eduhub_achievement($theme)
 /**
  * 
  * @param theme_config $theme
- * @return string
+ * @return mixed
  */
 function theme_eduhub_testimonial($theme)
 {
@@ -162,7 +162,6 @@ function theme_eduhub_testimonial($theme)
     $templatecontext['testimonial_enabled'] = $theme->settings->testimonial_enabled;
     $templatecontext['testimonial_title'] = $theme->settings->testimonial_title ?? '';
     $templatecontext['testimonial_caption'] = $theme->settings->testimonial_caption ?? '';
-
 
     $total_users = $theme->settings->testimonial_total_users;
     foreach (array_chunk(range(1, $total_users), 2) as $key => $users) {
@@ -198,7 +197,7 @@ function theme_eduhub_testimonial($theme)
 /**
  * 
  * @param theme_config $theme
- * @return string
+ * @return mixed
  */
 function theme_eduhub_partner($theme)
 {
@@ -212,7 +211,7 @@ function theme_eduhub_partner($theme)
 /**
  * 
  * @param theme_config $theme
- * @return string
+ * @return mixed
  */
 function theme_eduhub_footer($theme)
 {

@@ -169,3 +169,25 @@ $string['footer'] = 'Footer settings';
 $string['footer_desc'] = 'Footer - Enter the settings';
 $string['footer_enabled'] = 'Enable footer';
 $string['footer_enabled_desc'] = 'Enable or disabled footer to front page';
+
+// The name of the static page tab in the theme settings.                                                                                
+$string['staticpagesettings'] = 'Static page settings';
+
+$string['static_page'] = 'Static page';
+$string['static_page_desc'] = 'Static page - Enter the settings';
+$string['static_page_footer_select'] = 'Static page footer';
+$string['static_page_footer_select_desc'] = 'Select the static page footer style';
+$string['static_page_count'] = 'Static page count';
+$string['static_page_count_desc'] = 'Select how many static page you want to add then click <b>SAVE</b> to load the input fields.';
+$string['static_page_url'] = 'Static page url';
+$string['static_page_url_desc'] = 'Add the static page url without space, example: <b>/about</b>.';
+$string['static_page_title'] = 'Static page title';
+$string['static_page_title_desc'] = 'Add the static page title.';
+$string['static_page_body'] = 'Static page body';
+$string['static_page_body_desc'] = 'Add a body for your static page.';
+$string['static_page_custom_css'] = 'Custom css';
+$string['static_page_custom_css_desc'] = 'Add a custom css for styling your static page.';
+$string['static_page_custom_js'] = 'Custom js';
+$string['static_page_custom_js_desc'] = 'Add a custom js for scripting your static page.';
+$string['static_page_override_container'] = 'Override default container ?';
+$string['static_page_override_container_desc'] = 'This will remove the default content inside the <b>#page</b>';
