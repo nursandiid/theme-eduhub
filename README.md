@@ -1,6 +1,8 @@
-# Eduhub Theme Readme
+# Eduhub Theme
 
 Welcome to Eduhub, a feature-rich theme designed for customization and user-friendly experiences.
+
+![screenshot.png](./pix/settings/screenshot.png)
 
 ## Eduhub Settings
 
