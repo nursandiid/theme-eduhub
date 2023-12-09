@@ -57,6 +57,8 @@ $string['login'] = 'Login settings';
 $string['login_desc'] = 'Login - Enter the settings';
 $string['login_background_image'] = 'Login page background image';
 $string['login_background_image_desc'] = 'The image to display as a background for the login page.';
+$string['login_position'] = 'Login page position';
+$string['login_position_desc'] = 'The form login will display at the specified position on the page.';
 
 $string['dashboard_footer'] = 'Footer settings';
 $string['dashboard_footer_desc'] = 'Dashboard footer - Enter the settings';

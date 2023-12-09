@@ -29,7 +29,7 @@ require_once($CFG->libdir . '/behat/lib.php');
 require_once($CFG->dirroot . '/course/lib.php');
 require_once(__DIR__ . '/../global_vars.php');
 require_once(__DIR__ . '/../lib/frontpage_settings.php');
-require_once(__DIR__ . '/../lib/footer_settings.php');
+require_once(__DIR__ . '/../lib/theme_settings.php');
 
 // Add block button in editing mode.
 $addblockbutton = $OUTPUT->addblockbutton();

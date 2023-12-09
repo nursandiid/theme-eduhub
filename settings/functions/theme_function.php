@@ -57,6 +57,27 @@ function login_background_image($page)
 }
 
 /**
+ * Retrieves the login position for the login page.
+ * 
+ * @param admin_settingpage $page
+ * @return void
+ */
+function login_position($page)
+{
+    $name = 'theme_eduhub/login_position';
+    $title = get_string('login_position', 'theme_eduhub');
+    $description = get_string('login_position_desc', 'theme_eduhub');
+    $choices = [
+        'Center',
+        'Left',
+        'Right',
+    ];
+    $setting = new admin_setting_configselect($name, $title, $description, 0, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+}
+
+/**
  * Retrieves the heading or title for the dashboard footer block.
  * 
  * @param admin_settingpage $page

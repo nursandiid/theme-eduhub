@@ -33,6 +33,7 @@ $page = new admin_settingpage('theme_eduhub_theme', get_string('themesettings', 
 // Login settings.
 login_heading($page);
 login_background_image($page);
+login_position($page);
 
 // Dashboard footer settings.
 dashboard_footer_heading($page);

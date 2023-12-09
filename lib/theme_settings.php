@@ -16,12 +16,31 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Theme eduhub footer settings lib.
+ * Theme eduhub theme settings lib.
  * 
  * @package    theme_eduhub
  * @copyright  2023 Nursandi
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
+/**
+ * Retrieves the login position configuration for the login page.
+ * 
+ * @param theme_config $theme
+ * @return mixed
+ */
+function theme_eduhub_login_position($theme)
+{
+    if ($theme->settings?->login_position == 1) {
+        $templatecontext['login_position'] = 'login-position-left';
+    } else if ($theme->settings?->login_position == 2) {
+        $templatecontext['login_position'] = 'login-position-right';
+    } else {
+        $templatecontext['login_position'] = 'login-position-center';
+    }
+
+    return $templatecontext;
+}
 
 /**
  * Retrieves the selected footer configuration for a specific theme.

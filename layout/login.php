@@ -25,6 +25,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 require_once(__DIR__ . '/../global_vars.php');
+require_once(__DIR__ . '/../lib/theme_settings.php');
 
 $bodyattributes = $OUTPUT->body_attributes();
 
@@ -33,5 +34,8 @@ $templatecontext = [
     'output' => $OUTPUT,
     'bodyattributes' => $bodyattributes
 ];
+
+$theme = theme_config::load('eduhub');
+$templatecontext = array_merge($templatecontext, theme_eduhub_login_position($theme));
 
 echo $OUTPUT->render_from_template('theme_eduhub/login', $templatecontext);

@@ -25,7 +25,8 @@
     margin-top: 1px;
   }
 
-  #nav-notification-popover-container {
+  #nav-notification-popover-container,
+  [data-region="popover-region-messages"] {
     margin-right: .25rem;
   }
 
@@ -88,5 +89,5 @@
       padding-top: 4px !important;
     }
   }
-  
+
 }
