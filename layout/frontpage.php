@@ -29,7 +29,6 @@ require_once($CFG->libdir . '/behat/lib.php');
 require_once($CFG->dirroot . '/course/lib.php');
 require_once(__DIR__ . '/../global_vars.php');
 require_once(__DIR__ . '/../lib/frontpage_settings.php');
-require_once(__DIR__ . '/../lib/theme_settings.php');
 
 // Add block button in editing mode.
 $addblockbutton = $OUTPUT->addblockbutton();
@@ -148,6 +147,8 @@ $templatecontext = [
 
 $theme = theme_config::load('eduhub');
 
+$templatecontext = array_merge($templatecontext, theme_eduhub_container_type($theme));
+$templatecontext = array_merge($templatecontext, theme_eduhub_navbar_container_type($theme));
 $templatecontext = array_merge($templatecontext, theme_eduhub_slider($theme));
 $templatecontext = array_merge($templatecontext, theme_eduhub_course($theme));
 $templatecontext = array_merge($templatecontext, theme_eduhub_category($theme));
@@ -156,6 +157,5 @@ $templatecontext = array_merge($templatecontext, theme_eduhub_achievement($theme
 $templatecontext = array_merge($templatecontext, theme_eduhub_testimonial($theme));
 $templatecontext = array_merge($templatecontext, theme_eduhub_partner($theme));
 $templatecontext = array_merge($templatecontext, theme_eduhub_footer($theme));
-$templatecontext = array_merge($templatecontext, theme_eduhub_footer_select($theme));
 
 echo $OUTPUT->render_from_template('theme_eduhub/frontpage', $templatecontext);

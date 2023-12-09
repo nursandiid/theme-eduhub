@@ -62,7 +62,7 @@
     {{/hasblocks}}
 
     <div id="page" data-region="mainpage" data-usertour="scroller" class="drawers p-0 {{#courseindexopen}}show-drawer-left{{/courseindexopen}} {{#blockdraweropen}}show-drawer-right{{/blockdraweropen}} drag-container">
-        <div id="topofscroll" class="container my-4">
+        <div id="topofscroll" class="{{ container_type }} my-4">
             <div class="drawer-toggles d-flex">
                 {{#courseindex}}
                     <div class="drawer-toggler drawer-left-toggle open-nav d-print-none">
@@ -157,12 +157,12 @@
                 {{> theme_boost/footer }}
             {{/ footer_select }}
         </div>
+        
+        {{# footer_select }}
+            {{> theme_eduhub/frontpage/footer }}
+            {{{ output.standard_end_of_body_html }}}
+        {{/ footer_select }}
     </div>
-
-    {{# footer_select }}
-        {{> theme_eduhub/frontpage/footer }}
-        {{{ output.standard_end_of_body_html }}}
-    {{/ footer_select }}
 
     {{{ output.standard_after_main_region_html }}}
 </div>

@@ -24,6 +24,40 @@
  */
 
 /**
+ * Retrieves the dashboard container type setting on the theme admin page.
+ * 
+ * @param theme_config $theme
+ * @return mixed
+ */
+function theme_eduhub_container_type($theme)
+{
+    if ($theme->settings?->dashboard_container_type == 1) {
+        $templatecontext['container_type'] = 'container-fluid';
+    } else {
+        $templatecontext['container_type'] = 'container';
+    }
+
+    return $templatecontext;
+}
+
+/**
+ * Retrieves the dashboard navbar container type setting on the theme admin page.
+ * 
+ * @param theme_config $theme
+ * @return mixed
+ */
+function theme_eduhub_navbar_container_type($theme)
+{
+    if ($theme->settings?->dashboard_navbar_container_type == 1) {
+        $templatecontext['navbar_container_type'] = 'container-fluid';
+    } else {
+        $templatecontext['navbar_container_type'] = 'container';
+    }
+
+    return $templatecontext;
+}
+
+/**
  * Retrieves the login position configuration for the login page.
  * 
  * @param theme_config $theme

@@ -83,7 +83,13 @@ $THEME->layouts = [
         'regions' => array('side-pre'),
         'defaultregion' => 'side-pre',
         'options' => array('nonavbar' => true),
-    )
+    ),
+    'staticpage' => array(
+        'file' => 'staticpage.php',
+        'regions' => array('side-pre'),
+        'defaultregion' => 'side-pre',
+        'options' => array('nonavbar' => true),
+    ),
 ];
 
 $THEME->extrascsscallback = 'theme_eduhub_get_extra_scss';

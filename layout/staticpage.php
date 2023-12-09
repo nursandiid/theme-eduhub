@@ -109,11 +109,7 @@ $templatecontext = [
 
 $theme = theme_config::load('eduhub');
 
-$templatecontext = array_merge($templatecontext, theme_eduhub_footer_select($theme));
 $templatecontext = array_merge($templatecontext, theme_eduhub_container_type($theme));
 $templatecontext = array_merge($templatecontext, theme_eduhub_navbar_container_type($theme));
-
-// Course page header img.
-$templatecontext = array_merge($templatecontext, $OUTPUT->eduhub_course_header_img());
 
 echo $OUTPUT->render_from_template('theme_eduhub/drawers', $templatecontext);

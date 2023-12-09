@@ -30,16 +30,20 @@ require_once __DIR__ . '/functions/theme_function.php';
 // Theme settings.                                                                              
 $page = new admin_settingpage('theme_eduhub_theme', get_string('themesettings', 'theme_eduhub'));
 
+// Container type settings.
+eduhub_dashboard_container_type($page);
+eduhub_dashboard_navbar_container_type($page);
+
 // Login settings.
-login_heading($page);
-login_background_image($page);
-login_position($page);
+eduhub_login_heading($page);
+eduhub_login_background_image($page);
+eduhub_login_position($page);
 
 // Dashboard footer settings.
-dashboard_footer_heading($page);
-dashboard_footer_select($page);
-dashboard_footer_address($page);
-dashboard_footer_phone($page);
-dashboard_footer_email($page);
+eduhub_dashboard_footer_heading($page);
+eduhub_dashboard_footer_select($page);
+eduhub_dashboard_footer_address($page);
+eduhub_dashboard_footer_phone($page);
+eduhub_dashboard_footer_email($page);
 
 $settings->add($page);

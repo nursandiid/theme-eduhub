@@ -44,7 +44,7 @@ $PAGE->set_url('/theme/eduhub/staticpage/view.php?page=' . $page);
 $PAGE->set_context(context_system::instance());
 
 // Set page layout.
-$PAGE->set_pagelayout('standard');
+$PAGE->set_pagelayout('staticpage');
 
 // Add page name as body class.
 $PAGE->add_body_class('eduhub-staticpage-' . $page);

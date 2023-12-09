@@ -30,8 +30,8 @@ require_once __DIR__ . '/functions/static_page_function.php';
 // Static page settings.                                                                              
 $page = new admin_settingpage('theme_eduhub_static_page', get_string('staticpagesettings', 'theme_eduhub'));
 
-static_page_footer_select($page);
-static_page_count($page);
-static_page_setting($page);
+eduhub_static_page_footer_select($page);
+eduhub_static_page_count($page);
+eduhub_static_page_setting($page);
 
 $settings->add($page);

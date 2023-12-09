@@ -25,6 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+require_once __DIR__ . '/functions/frontpage_function.php';
 require_once __DIR__ . '/blocks/slider_block.php';
 require_once __DIR__ . '/blocks/course_block.php';
 require_once __DIR__ . '/blocks/category_block.php';
@@ -35,6 +36,10 @@ require_once __DIR__ . '/blocks/partner_block.php';
 require_once __DIR__ . '/blocks/footer_block.php';
 
 $page = new admin_settingpage('theme_eduhub_frontpage', get_string('frontpagesettings', 'theme_eduhub'));
+
+// Container type settings
+eduhub_container_type($page);
+eduhub_navbar_container_type($page);
 
 // Enable sliders to front page
 eduhub_slider_heading($page);

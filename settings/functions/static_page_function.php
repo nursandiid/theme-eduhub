@@ -29,7 +29,7 @@
  * @param admin_settingpage $page
  * @return void
  */
-function static_page_footer_select($page)
+function eduhub_static_page_footer_select($page)
 {
     $name = 'theme_eduhub/static_page_footer_select';
     $title = get_string('static_page_footer_select', 'theme_eduhub');
@@ -49,7 +49,7 @@ function static_page_footer_select($page)
  * @param admin_settingpage $page
  * @return void
  */
-function static_page_count($page)
+function eduhub_static_page_count($page)
 {
     $name = 'theme_eduhub/static_page_count';
     $title = get_string('static_page_count', 'theme_eduhub');
@@ -67,7 +67,7 @@ function static_page_count($page)
  * @param admin_settingpage $page
  * @return void
  */
-function static_page_setting($page)
+function eduhub_static_page_setting($page)
 {
     // If we don't have an static page yet, default to the preset.
     $static_page_count = get_config('theme_eduhub', 'static_page_count');

@@ -24,12 +24,52 @@
  */
 
 /**
+ * Retrieves and sets the dashboard container type setting on the theme admin page.
+ * 
+ * @param admin_settingpage $page
+ * @return void
+ */
+function eduhub_dashboard_container_type($page)
+{
+    $name = 'theme_eduhub/dashboard_container_type';
+    $title = get_string('dashboard_container_type', 'theme_eduhub');
+    $description = get_string('dashboard_container_type_desc', 'theme_eduhub');
+    $choices = [
+        'Default',
+        'Fluid'
+    ];
+    $setting = new admin_setting_configselect($name, $title, $description, 0, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+}
+
+/**
+ * Retrieves and sets the dashboard navbar container type setting on the theme admin page.
+ * 
+ * @param admin_settingpage $page
+ * @return void
+ */
+function eduhub_dashboard_navbar_container_type($page)
+{
+    $name = 'theme_eduhub/dashboard_navbar_container_type';
+    $title = get_string('dashboard_navbar_container_type', 'theme_eduhub');
+    $description = get_string('dashboard_navbar_container_type_desc', 'theme_eduhub');
+    $choices = [
+        'Default',
+        'Fluid'
+    ];
+    $setting = new admin_setting_configselect($name, $title, $description, 0, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+}
+
+/**
  * Retrieves the heading or title for the login block.
  * 
  * @param admin_settingpage $page
  * @return void
  */
-function login_heading($page)
+function eduhub_login_heading($page)
 {
     $name = 'theme_eduhub/login';
     $heading = get_string('login', 'theme_eduhub');
@@ -45,7 +85,7 @@ function login_heading($page)
  * @param admin_settingpage $page
  * @return void
  */
-function login_background_image($page)
+function eduhub_login_background_image($page)
 {
     $name = 'theme_eduhub/login_background_image';
     $title = get_string('login_background_image', 'theme_eduhub');
@@ -62,7 +102,7 @@ function login_background_image($page)
  * @param admin_settingpage $page
  * @return void
  */
-function login_position($page)
+function eduhub_login_position($page)
 {
     $name = 'theme_eduhub/login_position';
     $title = get_string('login_position', 'theme_eduhub');
@@ -83,7 +123,7 @@ function login_position($page)
  * @param admin_settingpage $page
  * @return void
  */
-function dashboard_footer_heading($page)
+function eduhub_dashboard_footer_heading($page)
 {
     $name = 'theme_eduhub/dashboard_footer';
     $heading = get_string('dashboard_footer', 'theme_eduhub');
@@ -99,7 +139,7 @@ function dashboard_footer_heading($page)
  * @param admin_settingpage $page
  * @return void
  */
-function dashboard_footer_select($page)
+function eduhub_dashboard_footer_select($page)
 {
     $name = 'theme_eduhub/dashboard_footer_select';
     $title = get_string('dashboard_footer_select', 'theme_eduhub');
@@ -119,7 +159,7 @@ function dashboard_footer_select($page)
  * @param admin_settingpage $page
  * @return void
  */
-function dashboard_footer_address($page)
+function eduhub_dashboard_footer_address($page)
 {
     $name = 'theme_eduhub/dashboard_footer_address';
     $title = get_string('dashboard_footer_address', 'theme_eduhub');
@@ -136,7 +176,7 @@ function dashboard_footer_address($page)
  * @param admin_settingpage $page
  * @return void
  */
-function dashboard_footer_phone($page)
+function eduhub_dashboard_footer_phone($page)
 {
     $name = 'theme_eduhub/dashboard_footer_phone';
     $title = get_string('dashboard_footer_phone', 'theme_eduhub');
@@ -153,7 +193,7 @@ function dashboard_footer_phone($page)
  * @param admin_settingpage $page
  * @return void
  */
-function dashboard_footer_email($page)
+function eduhub_dashboard_footer_email($page)
 {
     $name = 'theme_eduhub/dashboard_footer_email';
     $title = get_string('dashboard_footer_email', 'theme_eduhub');

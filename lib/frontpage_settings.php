@@ -24,6 +24,40 @@
  */
 
 /**
+ * Retrieves data or configurations related to the container type for a specific theme.
+ * 
+ * @param theme_config $theme
+ * @return mixed
+ */
+function theme_eduhub_container_type($theme)
+{
+    if ($theme->settings?->container_type == 1) {
+        $templatecontext['container_type'] = 'container-fluid';
+    } else {
+        $templatecontext['container_type'] = 'container';
+    }
+
+    return $templatecontext;
+}
+
+/**
+ * Retrieves data or configurations related to the navbar container type for a specific theme.
+ * 
+ * @param theme_config $theme
+ * @return mixed
+ */
+function theme_eduhub_navbar_container_type($theme)
+{
+    if ($theme->settings?->navbar_container_type == 1) {
+        $templatecontext['navbar_container_type'] = 'container-fluid';
+    } else {
+        $templatecontext['navbar_container_type'] = 'container';
+    }
+
+    return $templatecontext;
+}
+
+/**
  * Retrieves data or configurations related to the slider for a specific theme.
  * 
  * @param theme_config $theme
@@ -225,6 +259,10 @@ function theme_eduhub_partner($theme)
 function theme_eduhub_footer($theme)
 {
     $templatecontext['footer_enabled'] = $theme->settings->footer_enabled;
+    $templatecontext['footer_address'] = $theme->settings?->dashboard_footer_address;
+    $templatecontext['footer_phone'] = $theme->settings?->dashboard_footer_phone;
+    $templatecontext['footer_email'] = $theme->settings?->dashboard_footer_email;
+    $templatecontext['current_year'] = date('Y');
 
     return $templatecontext;
 }

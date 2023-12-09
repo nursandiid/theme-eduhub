@@ -53,6 +53,11 @@ $string['rawscsspre_desc'] = 'In this field you can provide initialising SCSS co
 // The name of theme tab in the theme settings.                                                                                
 $string['themesettings'] = 'Theme settings';
 
+$string['dashboard_container_type'] = 'Container type';
+$string['dashboard_container_type_desc'] = 'Choose the type of container used in your dashboard content: <br>- Default Container: Suitable for standard layouts. <br>- Fluid Container: Ideal for a more expansive and immersive design.';
+$string['dashboard_navbar_container_type'] = 'Navbar container type';
+$string['dashboard_navbar_container_type_desc'] = 'Choose the type of container used in your dashboard navbar.';
+
 $string['login'] = 'Login settings';
 $string['login_desc'] = 'Login - Enter the settings';
 $string['login_background_image'] = 'Login page background image';
@@ -73,6 +78,11 @@ $string['dashboard_footer_email_desc'] = 'Input company email';
 
 // The name of the front page tab in the theme settings.                                                                                
 $string['frontpagesettings'] = 'Front page settings';
+
+$string['container_type'] = 'Container type';
+$string['container_type_desc'] = 'Choose the type of container used in your frontpage content: <br>- Default Container: Suitable for standard layouts. <br>- Fluid Container: Ideal for a more expansive and immersive design.';
+$string['navbar_container_type'] = 'Navbar container type';
+$string['navbar_container_type_desc'] = 'Choose the type of container used in your frontpage navbar.';
 
 $string['slider'] = 'Slider settings';
 $string['slider_desc'] = 'Slider - Enter the settings';
