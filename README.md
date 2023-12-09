@@ -59,4 +59,6 @@ Easily create and manage static pages to communicate important information effec
 - Static Page Footer: Customize the footer for static pages.
 - Static Page Count: Set the number of static pages.
 
+For detailed instructions on configuring the URL for your static pages, refer to the [Static Page README.](./staticpage/README.md)
+
 Feel free to explore and utilize these settings to create a unique and tailored learning environment with Eduhub!

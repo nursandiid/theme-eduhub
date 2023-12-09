@@ -80,7 +80,7 @@ function static_page_setting($page)
         if ($url = get_config('theme_eduhub', 'static_page_url_' . $count)) {
             $url = trim($url, '/');
             $information .= "<br>- The url will show in /theme/eduhub/staticpage/view.php?page=$url";
-            $information .= "<br>- If you have already configure <b>.htaccess</b> file you can access the url with /page/$url";
+            $information .= "<br>- If you have already configure <b>.htaccess</b> file you can access the url with /page/$url.html";
         }
 
         $setting = new admin_setting_heading($name, $heading, $information);
