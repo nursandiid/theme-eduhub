@@ -16,13 +16,15 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- *
+ * Theme eduhub category block.
+ * 
  * @package    theme_eduhub
  * @copyright  2023 Nursandi
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 /**
+ * Retrieves the heading or title for the category block on the front page.
  * 
  * @param admin_settingpage $page
  * @return void
@@ -38,6 +40,7 @@ function eduhub_category_heading($page)
 }
 
 /**
+ * Checks if the category block is enabled on the front page.
  * 
  * @param admin_settingpage $page
  * @return void
@@ -54,6 +57,7 @@ function eduhub_category_enabled($page)
 
 
 /**
+ * Retrieves the title or name of the category block.
  * 
  * @param admin_settingpage $page
  * @return void
@@ -70,6 +74,7 @@ function eduhub_category_title($page)
 }
 
 /**
+ * Retrieves the caption or description of the category block.
  * 
  * @param admin_settingpage $page
  * @return void

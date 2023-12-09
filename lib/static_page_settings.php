@@ -16,13 +16,15 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- *
+ * Theme eduhub static page settings lib.
+ * 
  * @package    theme_eduhub
  * @copyright  2023 Nursandi
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 /**
+ * Retrieves data or configurations for a static page associated with a specific theme and URL.
  * 
  * @param theme_config $theme
  * @return array
@@ -67,7 +69,7 @@ function theme_eduhub_static_page_select($theme, $url)
 }
 
 /**
- * Footer select
+ * Retrieves the selected footer configuration for static pages in a specific theme.
  * 
  * @param theme_config $theme
  * @return array

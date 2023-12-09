@@ -16,13 +16,15 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- *
+ * Theme eduhub achievement block.
+ * 
  * @package    theme_eduhub
  * @copyright  2023 Nursandi
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 /**
+ * Retrieves the heading or title for the achievement block on the front page.
  * 
  * @param admin_settingpage $page
  * @return void
@@ -38,6 +40,7 @@ function eduhub_achievement_heading($page)
 }
 
 /**
+ * Checks if the achievement block is enabled on the front page.
  * 
  * @param admin_settingpage $page
  * @return void
@@ -54,6 +57,7 @@ function eduhub_achievement_enabled($page)
 
 
 /**
+ * Retrieves the title or name of the achievement block.
  * 
  * @param admin_settingpage $page
  * @return void
@@ -70,6 +74,7 @@ function eduhub_achievement_title($page)
 }
 
 /**
+ * Retrieves the caption or description of the achievement block.
  * 
  * @param admin_settingpage $page
  * @return void
@@ -86,6 +91,7 @@ function eduhub_achievement_caption($page)
 }
 
 /**
+ * Retrieves the total number of students associated with the achievement block.
  * 
  * @param admin_settingpage $page
  * @return void
@@ -102,6 +108,7 @@ function eduhub_achievement_total_students($page)
 }
 
 /**
+ * Retrieves the total number of graduates associated with the achievement block.
  * 
  * @param admin_settingpage $page
  * @return void
@@ -118,6 +125,7 @@ function eduhub_achievement_total_graduates($page)
 }
 
 /**
+ * Retrieves the total number of free courses associated with the achievement block.
  * 
  * @param admin_settingpage $page
  * @return void
@@ -134,6 +142,7 @@ function eduhub_achievement_total_free_courses($page)
 }
 
 /**
+ * Retrieves the total number of active courses associated with the achievement block.
  * 
  * @param admin_settingpage $page
  * @return void
@@ -150,6 +159,7 @@ function eduhub_achievement_total_active_courses($page)
 }
 
 /**
+ * Retrieves the background image URL for the achievement block.
  * 
  * @param admin_settingpage $page
  * @return void

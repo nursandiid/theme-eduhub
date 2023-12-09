@@ -16,13 +16,15 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- *
+ * Theme eduhub slider block.
+ * 
  * @package    theme_eduhub
  * @copyright  2023 Nursandi
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 /**
+ * Retrieves the heading or title for the slider block on the front page.
  * 
  * @param admin_settingpage $page
  * @return void
@@ -38,6 +40,7 @@ function eduhub_slider_heading($page)
 }
 
 /**
+ * Checks if the slider block is enabled on the front page.
  * 
  * @param admin_settingpage $page
  * @return void
@@ -53,6 +56,7 @@ function eduhub_slider_enabled($page)
 }
 
 /**
+ * Retrieves the total count of slides in the slider block.
  * 
  * @param admin_settingpage $page
  * @return void
@@ -70,6 +74,7 @@ function eduhub_slider_count($page)
 }
 
 /**
+ * Retrieves the settings or configuration for the slider block on the front page.
  * 
  * @param admin_settingpage $page
  * @return void

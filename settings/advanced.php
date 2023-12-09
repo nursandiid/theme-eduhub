@@ -16,6 +16,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Theme eduhub advanced settings.
  *
  * @package    theme_eduhub
  * @copyright  2023 Nursandi
@@ -24,29 +25,12 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+require_once __DIR__ . '/functions/advanced_function.php';
+
 // Advanced settings.                                                                                                           
 $page = new admin_settingpage('theme_eduhub_advanced', get_string('advancedsettings', 'theme_eduhub'));
 
-// Raw SCSS to include before the content.                                                                                      
-$setting = new admin_setting_configtextarea(
-    'theme_eduhub/scsspre',
-    get_string('rawscsspre', 'theme_eduhub'),
-    get_string('rawscsspre_desc', 'theme_eduhub'),
-    '',
-    PARAM_RAW
-);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-
-// Raw SCSS to include after the content.                                                                                       
-$setting = new admin_setting_configtextarea(
-    'theme_eduhub/scss',
-    get_string('rawscss', 'theme_eduhub'),
-    get_string('rawscss_desc', 'theme_eduhub'),
-    '',
-    PARAM_RAW
-);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
+eduhub_scss_pre($page);
+eduhub_scss_post($page);
 
 $settings->add($page);

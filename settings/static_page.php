@@ -16,6 +16,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Theme eduhub static page settings.
  *
  * @package    theme_eduhub
  * @copyright  2023 Nursandi
@@ -24,96 +25,13 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+require_once __DIR__ . '/functions/static_page_function.php';
+
 // Static page settings.                                                                              
 $page = new admin_settingpage('theme_eduhub_static_page', get_string('staticpagesettings', 'theme_eduhub'));
 
-$name = 'theme_eduhub/static_page_footer_select';
-$title = get_string('static_page_footer_select', 'theme_eduhub');
-$description = get_string('static_page_footer_select_desc', 'theme_eduhub');
-$choices = [
-    'Moodle footer',
-    'Frontpage footer'
-];
-$setting = new admin_setting_configselect($name, $title, $description, 0, $choices);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-
-$name = 'theme_eduhub/static_page_count';
-$title = get_string('static_page_count', 'theme_eduhub');
-$description = get_string('static_page_count_desc', 'theme_eduhub');
-$default = 0;
-$choices = range(0, 6);
-$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-
-// If we don't have an static page yet, default to the preset.
-$static_page_count = get_config('theme_eduhub', 'static_page_count');
-for ($count = 1; $count <= $static_page_count; $count++) {
-    $name = 'theme_eduhub/static_page_' . $count;
-
-    $suffix = (get_config('theme_eduhub', 'static_page_title_' . $count) ?? $count);
-    $heading = get_string('static_page', 'theme_eduhub') . ' - ' . $suffix;
-    $information = get_string('static_page_desc', 'theme_eduhub') . ' - ' . $suffix;
-    if ($url = get_config('theme_eduhub', 'static_page_url_' . $count)) {
-        $url = trim($url, '/');
-        $information .= "<br>- The url will show in /theme/eduhub/staticpage/view.php?page=$url";
-        $information .= "<br>- If you have already configure <b>.htaccess</b> file you can access the url with /page/$url";
-    }
-
-    $setting = new admin_setting_heading($name, $heading, $information);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
-
-    // Static page url.
-    $name = 'theme_eduhub/static_page_url_' . $count;
-    $title = get_string('static_page_url', 'theme_eduhub');
-    $description = get_string('static_page_url_desc', 'theme_eduhub');
-    $setting = new admin_setting_configtext($name, $title, $description, '');
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
-
-    // Static page title.
-    $name = 'theme_eduhub/static_page_title_' . $count;
-    $title = get_string('static_page_title', 'theme_eduhub');
-    $description = get_string('static_page_title_desc', 'theme_eduhub');
-    $default = 'Page title';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
-
-    // Static page body.
-    $name = 'theme_eduhub/static_page_body_' . $count;
-    $title = get_string('static_page_body', 'theme_eduhub');
-    $description = get_string('static_page_body_desc', 'theme_eduhub');
-    $default = 'Some representative placeholder content for the body.';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
-
-    // Static page custom css.
-    $name = 'theme_eduhub/static_page_custom_css_' . $count;
-    $title = get_string('static_page_custom_css', 'theme_eduhub');
-    $description = get_string('static_page_custom_css_desc', 'theme_eduhub');
-    $setting = new admin_setting_configtextarea($name, $title, $description, '');
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
-
-    // Static page custom js.
-    $name = 'theme_eduhub/static_page_custom_js_' . $count;
-    $title = get_string('static_page_custom_js', 'theme_eduhub');
-    $description = get_string('static_page_custom_js_desc', 'theme_eduhub');
-    $setting = new admin_setting_configtextarea($name, $title, $description, '');
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
-
-    // Static page override container.
-    $name = 'theme_eduhub/static_page_override_container_' . $count;
-    $title = get_string('static_page_override_container', 'theme_eduhub');
-    $description = get_string('static_page_override_container_desc', 'theme_eduhub');
-    $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
-}
+static_page_footer_select($page);
+static_page_count($page);
+static_page_setting($page);
 
 $settings->add($page);

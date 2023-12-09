@@ -16,6 +16,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Theme eduhub settings.
  *
  * @package    theme_eduhub
  * @copyright  2023 Nursandi
@@ -32,12 +33,9 @@ if ($ADMIN->fulltree) {
     // Boost provides a nice setting page which splits settings onto separate tabs. We want to use it here.                         
     $settings = new theme_boost_admin_settingspage_tabs('themesettingeduhub', get_string('configtitle', 'theme_eduhub'));
 
-    // Each page is a tab - the first is the "General" tab.                                                                         
-    $page = new admin_settingpage('theme_eduhub_general', get_string('generalsettings', 'theme_eduhub'));
-
-    require_once 'settings/general.php';
-    require_once 'settings/advanced.php';
-    require_once 'settings/theme.php';
-    require_once 'settings/frontpage_settings.php';
-    require_once 'settings/static_page.php';
+    require_once __DIR__ . '/settings/general.php';
+    require_once __DIR__ . '/settings/advanced.php';
+    require_once __DIR__ . '/settings/theme.php';
+    require_once __DIR__ . '/settings/frontpage.php';
+    require_once __DIR__ . '/settings/static_page.php';
 }

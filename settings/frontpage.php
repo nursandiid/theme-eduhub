@@ -16,11 +16,14 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Theme eduhub frontpage settings.
  *
  * @package    theme_eduhub
  * @copyright  2023 Nursandi
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
+defined('MOODLE_INTERNAL') || die();
 
 require_once __DIR__ . '/blocks/slider_block.php';
 require_once __DIR__ . '/blocks/course_block.php';
@@ -31,9 +34,7 @@ require_once __DIR__ . '/blocks/testimonial_block.php';
 require_once __DIR__ . '/blocks/partner_block.php';
 require_once __DIR__ . '/blocks/footer_block.php';
 
-defined('MOODLE_INTERNAL') || die();
-
-$page = new admin_settingpage('theme_eduhub_frontpage', get_string('frontpageeduhub', 'theme_eduhub'));
+$page = new admin_settingpage('theme_eduhub_frontpage', get_string('frontpagesettings', 'theme_eduhub'));
 
 // Enable sliders to front page
 eduhub_slider_heading($page);

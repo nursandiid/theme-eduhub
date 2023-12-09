@@ -70,7 +70,7 @@ $string['dashboard_footer_email'] = 'Company email';
 $string['dashboard_footer_email_desc'] = 'Input company email';
 
 // The name of the front page tab in the theme settings.                                                                                
-$string['frontpageeduhub'] = 'Front page settings';
+$string['frontpagesettings'] = 'Front page settings';
 
 $string['slider'] = 'Slider settings';
 $string['slider_desc'] = 'Slider - Enter the settings';

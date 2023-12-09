@@ -14,25 +14,21 @@
             <div class="col-md-6 col-lg-4 col-xl-3 mb-lg-5 mb-3">
                 <div class="top_courses card rounded shadow-sm border-0 overflow-hidden">
                     <div class="card-image">
-                        <img class="img-whp w-100"
+                        <img class="w-100"
                             src="{{ image_url }}"
                             alt="{{ fullname }}">
                     </div>
-                    <div class="card-body">
+                    <div class="card-category px-3 py-1">
+                        {{# category }}
+                        <small class="badge badge-success">{{ category }}</small>
+                        {{/ category }}
+                        {{^ category }}
+                        <small>-</small>
+                        {{/ category }}
+                    </div>
+                    <div class="card-body px-3 py-1">
                         <a href="/course/view.php?id={{ id }}">
-                            <div>
-                                <div class="overlay">
-                                    {{# category }}
-                                    <small>{{ category }}</small>
-                                    {{/ category }}
-                                    {{^ category }}
-                                    <small>-</small>
-                                    {{/ category }}
-                                </div>
-                                <div class="tc_content">
-                                    <p class="font-weight-bold mb-0">{{ fullname }}</p>
-                                </div>
-                            </div>
+                           <p class="font-weight-bold mb-0">{{ fullname }}</p>
                         </a>
                     </div>
                 </div>

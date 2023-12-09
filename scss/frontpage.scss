@@ -88,9 +88,25 @@
 }
 
 // top courses
-.top_courses {
-  a {
-    text-decoration: none;
+#our-top-courses {
+  .top_courses {
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .card-image {
+    height: 144px;
+    overflow: hidden;
+
+    img {
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+
+  .card-body {
+    min-height: 60px;
   }
 }
 

@@ -16,6 +16,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Theme eduhub renderers.
  *
  * @package    theme_eduhub
  * @copyright  2023 Nursandi

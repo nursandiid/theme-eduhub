@@ -27,7 +27,7 @@ require_once($CFG->libdir . '/blocklib.php');
 require_once($CFG->libdir . '/behat/lib.php');
 require_once($CFG->dirroot . '/course/lib.php');
 require_once(__DIR__ . '/../global_vars.php');
-require_once(__DIR__ . '/../lib/staticpage_settings.php');
+require_once(__DIR__ . '/../lib/static_page_settings.php');
 
 // Require login if the plugin or Moodle is configured to force login.
 if ($CFG->forcelogin) {

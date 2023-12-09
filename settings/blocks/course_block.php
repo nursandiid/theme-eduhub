@@ -16,6 +16,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Theme eduhub course block.
  *
  * @package    theme_eduhub
  * @copyright  2023 Nursandi
@@ -23,6 +24,7 @@
  */
 
 /**
+ * Retrieves the heading or title for the course block on the front page.
  * 
  * @param admin_settingpage $page
  * @return void
@@ -38,6 +40,7 @@ function eduhub_course_heading($page)
 }
 
 /**
+ * Checks if the course block is enabled on the front page.
  * 
  * @param admin_settingpage $page
  * @return void
@@ -54,6 +57,7 @@ function eduhub_course_enabled($page)
 
 
 /**
+ * Retrieves the title or name of the course block.
  * 
  * @param admin_settingpage $page
  * @return void
@@ -70,6 +74,7 @@ function eduhub_course_title($page)
 }
 
 /**
+ * Retrieves the caption or description of the course block.
  * 
  * @param admin_settingpage $page
  * @return void

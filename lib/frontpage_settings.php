@@ -16,13 +16,15 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- *
+ * Theme eduhub frontpage settings lib.
+ * 
  * @package    theme_eduhub
  * @copyright  2023 Nursandi
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 /**
+ * Retrieves data or configurations related to the slider for a specific theme.
  * 
  * @param theme_config $theme
  * @return mixed
@@ -65,6 +67,7 @@ function theme_eduhub_slider($theme)
 }
 
 /**
+ * Retrieves data or configurations related to the course section for a specific theme.
  * 
  * @param theme_config $theme
  * @return mixed
@@ -79,6 +82,7 @@ function theme_eduhub_course($theme)
 }
 
 /**
+ * Retrieves data or configurations related to the category section for a specific theme.
  * 
  * @param theme_config $theme
  * @return mixed
@@ -93,6 +97,7 @@ function theme_eduhub_category($theme)
 }
 
 /**
+ * Retrieves data or configurations related to the feature section for a specific theme.
  * 
  * @param theme_config $theme
  * @return mixed
@@ -130,6 +135,7 @@ function theme_eduhub_feature($theme)
 }
 
 /**
+ * Retrieves data or configurations related to the achievement section for a specific theme.
  * 
  * @param theme_config $theme
  * @return mixed
@@ -148,6 +154,7 @@ function theme_eduhub_achievement($theme)
 }
 
 /**
+ * Retrieves data or configurations related to the testimonial section for a specific theme.
  * 
  * @param theme_config $theme
  * @return mixed
@@ -195,6 +202,7 @@ function theme_eduhub_testimonial($theme)
 }
 
 /**
+ * Retrieves data or configurations related to the partner section for a specific theme.
  * 
  * @param theme_config $theme
  * @return mixed
@@ -209,6 +217,7 @@ function theme_eduhub_partner($theme)
 }
 
 /**
+ * Retrieves data or configurations related to the footer for a specific theme.
  * 
  * @param theme_config $theme
  * @return mixed

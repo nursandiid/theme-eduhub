@@ -16,7 +16,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Theme eduhub footer block.
+ * Theme eduhub advanced functions.
  * 
  * @package    theme_eduhub
  * @copyright  2023 Nursandi
@@ -24,33 +24,39 @@
  */
 
 /**
- * Retrieves the heading or title for the footer block on the front page.
+ * Raw SCSS to include before the content.  
  * 
  * @param admin_settingpage $page
  * @return void
  */
-function eduhub_footer_heading($page)
+function eduhub_scss_pre($page)
 {
-    $name = 'theme_eduhub/footer';
-    $heading = get_string('footer', 'theme_eduhub');
-    $information = get_string('footer_desc', 'theme_eduhub');
-    $setting = new admin_setting_heading($name, $heading, $information);
+    $setting = new admin_setting_configtextarea(
+        'theme_eduhub/scsspre',
+        get_string('rawscsspre', 'theme_eduhub'),
+        get_string('rawscsspre_desc', 'theme_eduhub'),
+        '',
+        PARAM_RAW
+    );
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 }
 
 /**
- * Checks if the footer block is enabled on the front page.
+ * Raw SCSS to include after the content.
  * 
  * @param admin_settingpage $page
  * @return void
  */
-function eduhub_footer_enabled($page)
+function eduhub_scss_post($page)
 {
-    $name = 'theme_eduhub/footer_enabled';
-    $title = get_string('footer_enabled', 'theme_eduhub');
-    $description = get_string('footer_enabled_desc', 'theme_eduhub');
-    $setting = new admin_setting_configcheckbox($name, $title, $description, 0);
+    $setting = new admin_setting_configtextarea(
+        'theme_eduhub/scss',
+        get_string('rawscss', 'theme_eduhub'),
+        get_string('rawscss_desc', 'theme_eduhub'),
+        '',
+        PARAM_RAW
+    );
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 }

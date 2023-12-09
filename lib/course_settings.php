@@ -16,13 +16,15 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Theme eduhub course settings lib.
+ * 
  * @package    theme_eduhub
  * @copyright  2023 Nursandi
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 /**
- * Get course image.
+ * Retrieves the image associated with a specific course using the provided course ID.
  *
  * @param int $id course id.
  * @return url
@@ -50,6 +52,6 @@ function eduhub_get_course_image($id)
             );
         }
     }
-    
+
     return $url;
 }

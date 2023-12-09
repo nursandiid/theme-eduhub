@@ -16,6 +16,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Theme eduhub theme settings.
  *
  * @package    theme_eduhub
  * @copyright  2023 Nursandi
@@ -24,66 +25,20 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+require_once __DIR__ . '/functions/theme_function.php';
+
 // Theme settings.                                                                              
 $page = new admin_settingpage('theme_eduhub_theme', get_string('themesettings', 'theme_eduhub'));
 
 // Login settings.
-$name = 'theme_eduhub/login';
-$heading = get_string('login', 'theme_eduhub');
-$information = get_string('login_desc', 'theme_eduhub');
-$setting = new admin_setting_heading($name, $heading, $information);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-
-$name = 'theme_eduhub/login_background_image';
-$title = get_string('login_background_image', 'theme_eduhub');
-$description = get_string('login_background_image_desc', 'theme_eduhub');
-$filearea = 'login_background_image';
-$setting = new admin_setting_configstoredfile($name, $title, $description, $filearea);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
+login_heading($page);
+login_background_image($page);
 
 // Dashboard footer settings.
-$name = 'theme_eduhub/dashboard_footer';
-$heading = get_string('dashboard_footer', 'theme_eduhub');
-$information = get_string('dashboard_footer_desc', 'theme_eduhub');
-$setting = new admin_setting_heading($name, $heading, $information);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-
-$name = 'theme_eduhub/dashboard_footer_select';
-$title = get_string('dashboard_footer_select', 'theme_eduhub');
-$description = get_string('dashboard_footer_select_desc', 'theme_eduhub');
-$choices = [
-    'Moodle footer',
-    'Frontpage footer'
-];
-$setting = new admin_setting_configselect($name, $title, $description, 0, $choices);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-
-$name = 'theme_eduhub/dashboard_footer_address';
-$title = get_string('dashboard_footer_address', 'theme_eduhub');
-$description = get_string('dashboard_footer_address_desc', 'theme_eduhub');
-$default = '329 Queensberry Street, North Melbourne';
-$setting = new admin_setting_configtext($name, $title, $description, $default);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-
-$name = 'theme_eduhub/dashboard_footer_phone';
-$title = get_string('dashboard_footer_phone', 'theme_eduhub');
-$description = get_string('dashboard_footer_phone_desc', 'theme_eduhub');
-$default = '+1123456';
-$setting = new admin_setting_configtext($name, $title, $description, $default);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-
-$name = 'theme_eduhub/dashboard_footer_email';
-$title = get_string('dashboard_footer_email', 'theme_eduhub');
-$description = get_string('dashboard_footer_email_desc', 'theme_eduhub');
-$default = 'support@eduhub.com';
-$setting = new admin_setting_configtext($name, $title, $description, $default);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
+dashboard_footer_heading($page);
+dashboard_footer_select($page);
+dashboard_footer_address($page);
+dashboard_footer_phone($page);
+dashboard_footer_email($page);
 
 $settings->add($page);

@@ -16,13 +16,15 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- *
+ * Theme eduhub testimonial block.
+ * 
  * @package    theme_eduhub
  * @copyright  2023 Nursandi
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 /**
+ * Retrieves the heading or title for the testimonial block on the front page.
  * 
  * @param admin_settingpage $page
  * @return void
@@ -38,6 +40,7 @@ function eduhub_testimonial_heading($page)
 }
 
 /**
+ * Checks if the testimonial block is enabled on the front page.
  * 
  * @param admin_settingpage $page
  * @return void
@@ -54,6 +57,7 @@ function eduhub_testimonial_enabled($page)
 
 
 /**
+ * Retrieves the title or name of the testimonial block.
  * 
  * @param admin_settingpage $page
  * @return void
@@ -70,6 +74,7 @@ function eduhub_testimonial_title($page)
 }
 
 /**
+ * Retrieves the caption or description of the testimonial block.
  * 
  * @param admin_settingpage $page
  * @return void
@@ -86,6 +91,7 @@ function eduhub_testimonial_caption($page)
 }
 
 /**
+ * Retrieves the total number of users associated with the testimonial block.
  * 
  * @param admin_settingpage $page
  * @return void
@@ -103,6 +109,7 @@ function eduhub_testimonial_total_users($page)
 }
 
 /**
+ * Retrieves the settings or configuration for the testimonial slider block on the front page.
  * 
  * @param admin_settingpage $page
  * @return void
