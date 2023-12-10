@@ -25,9 +25,24 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+/**
+ * Moodle IntelliSense for global variables.
+ * 
+ * Configuration settings for Moodle.
+ * @var \stdClass $CFG
+ *
+ * The renderer responsible for generating HTML output in the Eduhub theme.
+ * @var \theme_eduhub\output\core_renderer $OUTPUT
+ *
+ * Represents the current page being displayed in Moodle.
+ * @var \moodle_page $PAGE
+ *
+ * Information about the site, including its name and other relevant details.
+ * @var \stdClass $SITE
+ */
+
 require_once($CFG->libdir . '/behat/lib.php');
 require_once($CFG->dirroot . '/course/lib.php');
-require_once(__DIR__ . '/../global_vars.php');
 require_once(__DIR__ . '/../lib/theme_settings.php');
 require_once(__DIR__ . '/../lib/accent_colors_settings.php');
 

@@ -22,11 +22,26 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+/**
+ * Moodle IntelliSense for global variables.
+ * 
+ * Configuration settings for Moodle.
+ * @var \stdClass $CFG
+ *
+ * The renderer responsible for generating HTML output in the Eduhub theme.
+ * @var \theme_eduhub\output\core_renderer $OUTPUT
+ *
+ * Represents the current page being displayed in Moodle.
+ * @var \moodle_page $PAGE
+ *
+ * Information about the site, including its name and other relevant details.
+ * @var \stdClass $SITE
+ */
+
 require_once(__DIR__ . '/../../../config.php');
 require_once($CFG->libdir . '/blocklib.php');
 require_once($CFG->libdir . '/behat/lib.php');
 require_once($CFG->dirroot . '/course/lib.php');
-require_once(__DIR__ . '/../global_vars.php');
 require_once(__DIR__ . '/../lib/static_page_settings.php');
 
 // Require login if the plugin or Moodle is configured to force login.
