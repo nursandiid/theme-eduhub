@@ -39,6 +39,11 @@
     overflow: hidden;
   }
 
+  .popover-region-toggle::before,
+  .popover-region-toggle::after {
+    bottom: -2px;
+  }
+
   .navbar-brand:hover,
   .navbar-brand:focus {
     box-shadow: none;

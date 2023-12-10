@@ -24,12 +24,12 @@
  */
 
 /**
- * Retrieves data or configurations for a static page associated with a specific theme and URL.
+ * Retrieves and returns the selected static page for the Eduhub theme.
  * 
  * @param theme_config $theme
  * @return array
  */
-function theme_eduhub_static_page_select($theme, $url)
+function theme_eduhub_static_page_selected($theme, $url)
 {
     $static_page_count = $theme->settings->static_page_count;
     $static_pages = [];
@@ -40,7 +40,7 @@ function theme_eduhub_static_page_select($theme, $url)
         $static_page_custom_css = "static_page_custom_css_{$i}";
         $static_page_custom_js = "static_page_custom_js_{$i}";
         $static_page_override_container = "static_page_override_container_{$i}";
-        
+
         if ($theme->settings->$static_page_override_container == 1) {
             $static_page_override_container = true;
         } else {
@@ -88,4 +88,131 @@ function theme_eduhub_static_page_footer_select($theme)
     $footer['current_year'] = date('Y');
 
     return $footer;
+}
+
+/**
+ * Loads and configures the container settings for the Eduhub theme on static pages.
+ *
+ * @param array $static_page An array containing static page settings.
+ * @param DOMDocument $dom
+ * @return void
+ */
+function eduhub_load_container($static_page, $dom)
+{
+    if ($static_page['static_page_override_container']) {
+        $dom->getElementById('page')?->setAttribute('class', 'mt-0');
+        $dom->getElementById('topofscroll')?->setAttribute('class', 'mt-0');
+        $dom->getElementById('page-header')?->remove();
+        $dom->getElementById('page-footer')?->setAttribute('class', 'mt-0');
+        $dom->getElementById('page-content')?->remove();
+
+        // Override header
+        // Find the target div with specific class and insert the page header
+        $page = $dom->getElementById('page');
+        if ($page) {
+            $page_header = '
+                <div class="static-page-banner" id="static-page-banner" style="margin-top: 60px">
+                    <div class="container">
+                        <div class="overlay">
+                            <h2 class="fa-2x text-white">' . $static_page['static_page_title'] . '</h2>
+                        </div>
+                    </div>
+                </div>
+            ';
+
+            $contentDom = new DOMDocument();
+            @$contentDom->loadHTML($page_header);
+
+            $newBody = $contentDom->getElementsByTagName('body')->item(0);
+
+            // Iterate through the children of the body and prepend them to the target div's parent
+            foreach ($newBody->childNodes as $node) {
+                $importedNode = $dom->importNode($node, true);
+                $page->parentNode->insertBefore($importedNode, $page->previousSibling);
+            }
+        }
+
+        // Override default content
+        // Find the target div with specific class and insert the content
+        $page_banner = $dom->getElementById('static-page-banner');
+        if ($page_banner) {
+            $page_body = $static_page['static_page_body'];
+
+            $contentDom = new DOMDocument();
+            @$contentDom->loadHTML($page_body);
+
+            $newBody = $contentDom->getElementsByTagName('body')->item(0);
+
+            // Iterate through the children of the body and append them to the target div's parent
+            foreach ($newBody->childNodes as $node) {
+                $importedNode = $dom->importNode($node, true);
+                $page_banner->parentNode->insertBefore($importedNode, $page_banner->nextSibling);
+            }
+        }
+    } else {
+        // Find the target div with specific class and insert the content
+        $main_content = $dom->getElementById('maincontent');
+        if ($main_content) {
+            $page_body = $static_page['static_page_body'];
+
+            $contentDom = new DOMDocument();
+            @$contentDom->loadHTML($page_body);
+
+            $newBody = $contentDom->getElementsByTagName('body')->item(0);
+
+            // Iterate through the children of the body and append them to the target div's parent
+            foreach ($newBody->childNodes as $node) {
+                $importedNode = $dom->importNode($node, true);
+                $main_content->parentNode->insertBefore($importedNode, $main_content->nextSibling);
+            }
+        }
+    }
+}
+
+/**
+ * Loads and applies custom CSS styles for the Eduhub theme on static pages.
+ *
+ * @param array $static_page An array containing static page settings.
+ * @param DOMDocument $dom
+ * @return void
+ */
+function eduhub_load_custom_css($static_page, $dom)
+{
+    if ($static_page['static_page_custom_css']) {
+        $head = $dom->getElementsByTagName('head')->item(0);
+        if ($head) {
+            $css = $static_page['static_page_custom_css'];
+
+            // Create a new style element
+            $styleElement = $dom->createElement('style');
+            $styleElement->setAttribute('type', 'text/css');
+            $styleElement->nodeValue = $css;
+
+            // Append the style element to the head
+            $head->appendChild($styleElement);
+        }
+    }
+}
+
+/**
+ * Overrides and configures icon settings using DOMDocument.
+ *
+ * @param DOMDocument $dom
+ * @return void
+ */
+function eduhub_load_icons($dom)
+{
+    $xpath = new DOMXPath($dom);
+
+    // Find all elements with the specified class using XPath
+    $icons = $xpath->query('//span[contains(@class, "fas") or contains(@class, "fab") or contains(@class, "far")]');
+
+    // Iterate through each element and remove whitespace
+    foreach ($icons as $icon) {
+        // Check if the node is a DOMText (text node)
+        if ($icon->firstChild instanceof DOMText) {
+            // Trim and replace whitespace
+            $icon->firstChild->nodeValue = '';
+        }
+    }
 }
