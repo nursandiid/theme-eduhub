@@ -24,6 +24,102 @@
  */
 
 /**
+ * Variable $brand-color.
+ * 
+ * @param admin_settingpage $page
+ * @return void
+ */
+function eduhub_brand_color($page)
+{
+    // We use an empty default value because the default colour should come from the preset.                                        
+    $name = 'theme_eduhub/brandcolor';
+    $title = get_string('brandcolor', 'theme_eduhub');
+    $description = get_string('brandcolor_desc', 'theme_eduhub');
+    $default = '#0f6cbf';
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+}
+
+/**
+ * Navbar variants accent colors.
+ * 
+ * @param admin_settingpage $page
+ * @return void
+ */
+function eduhub_navbar_variant($page)
+{
+    $name = 'theme_eduhub/navbar_variant';
+    $title = get_string('navbar_variant', 'theme_eduhub');
+    $description = get_string('navbar_variant_desc', 'theme_eduhub');
+    $default = 'white';
+    $keys = [
+        'primary:#0f6cbf', // it depends by accent color
+        'secondary:#6a737b',
+        'dark:#343a40',
+        'black:#000',
+        'white:#fff',
+        'light:#f8f9fa',
+        'success:#357a32',
+        'info:#008196',
+        'warning:#ff7518',
+        'danger:#ca3120',
+        'blue:#0f6cbf',
+        'indigo:#6610f2',
+        'purple:#',
+        'pink:#613d7c',
+        'red:#ca3120',
+        'orange:#ff7518',
+        'yellow:#f0ad4e',
+        'green:#357a32',
+        'teal:#20c997',
+        'cyan:#008196',
+    ];
+    $choices = array_map(function ($accent) {
+        return ucfirst(explode(':', $accent)[0]);
+    }, $keys);
+    $choices = array_combine($keys, $choices);
+
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+}
+
+/**
+ * Navbar login button background color.
+ * 
+ * @param admin_settingpage $page
+ * @return void
+ */
+function eduhub_navbar_login_button_bg_color($page)
+{
+    $name = 'theme_eduhub/navbar_login_button_bg_color';
+    $title = get_string('navbar_login_button_bg_color', 'theme_eduhub');
+    $description = get_string('navbar_login_button_bg_color_desc', 'theme_eduhub');
+    $default = '#0f6cbf';
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+}
+
+/**
+ * Navbar login button text color.
+ * 
+ * @param admin_settingpage $page
+ * @return void
+ */
+function eduhub_navbar_login_button_text_color($page)
+{
+    $name = 'theme_eduhub/navbar_login_button_text_color';
+    $title = get_string('navbar_login_button_text_color', 'theme_eduhub');
+    $description = get_string('navbar_login_button_text_color_desc', 'theme_eduhub');
+    $default = '#fff';
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+}
+
+/**
  * Retrieves and sets the dashboard container type setting on the theme admin page.
  * 
  * @param admin_settingpage $page

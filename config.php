@@ -93,3 +93,4 @@ $THEME->layouts = [
 ];
 
 $THEME->extrascsscallback = 'theme_eduhub_get_extra_scss';
+$THEME->prescsscallback = 'theme_eduhub_get_pre_scss';

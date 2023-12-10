@@ -1,3 +1,19 @@
+.aalink.focus,
+a.focus.autolink,
+.aalink:focus,
+a.autolink:focus,
+#page-footer a:not([class]).focus,
+#page-footer a:not([class]):focus,
+.arrow_link.focus,
+.arrow_link:focus,
+a:not([class]).focus,
+a:not([class]):focus,
+.activityinstance>a.focus,
+.activityinstance>a:focus {
+  background-color: rgba($color: $primary, $alpha: .25);
+  box-shadow: 0 -.2rem rgba($color: $primary, $alpha: .25), 0 .2rem darken($color: $primary, $amount: 5%);
+}
+
 .btn {
   outline: none !important;
 }

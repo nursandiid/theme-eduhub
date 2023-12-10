@@ -29,7 +29,7 @@
  * @param theme_config $theme
  * @return mixed
  */
-function theme_eduhub_container_type($theme)
+function theme_eduhub_dashboard_container_type($theme)
 {
     if ($theme->settings?->dashboard_container_type == 1) {
         $templatecontext['container_type'] = 'container-fluid';
@@ -46,7 +46,7 @@ function theme_eduhub_container_type($theme)
  * @param theme_config $theme
  * @return mixed
  */
-function theme_eduhub_navbar_container_type($theme)
+function theme_eduhub_dashboard_navbar_container_type($theme)
 {
     if ($theme->settings?->dashboard_navbar_container_type == 1) {
         $templatecontext['navbar_container_type'] = 'container-fluid';
@@ -82,7 +82,7 @@ function theme_eduhub_login_position($theme)
  * @param theme_config $theme
  * @return mixed
  */
-function theme_eduhub_footer_select($theme)
+function theme_eduhub_dashboard_footer_select($theme)
 {
     if ($theme->settings?->dashboard_footer_select == 1) {
         $templatecontext['footer_select'] = true;

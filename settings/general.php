@@ -32,7 +32,6 @@ $page = new admin_settingpage('theme_eduhub_general', get_string('generalsetting
 
 eduhub_preset($page);
 eduhub_preset_files($page);
-eduhub_brand_color($page);
 
 // Must add the page after definiting all the settings!                                                                         
 $settings->add($page);

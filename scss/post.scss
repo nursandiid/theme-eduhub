@@ -327,7 +327,7 @@ a[data-conversation-id] {
       top: 10%;
       left: 1.25rem;
       padding: .8rem;
-      background-color: #e7fff5de;
+      background-color: lighten($color: $primary, $amount: 50%);
       border-radius: .5rem;
     }
 

@@ -62,8 +62,8 @@
       &:focus {
         outline: .2rem solid transparent;
         color: #1d2125;
-        background-color: #c6e7c4;
-        box-shadow: 0 -.2rem #c6e7c4, 0 .2rem #343a40;
+        background-color: rgba($color: $primary, $alpha: .25);
+        box-shadow: 0 -.2rem rgba($color: $primary, $alpha: .25), 0 .2rem darken($color: $primary, $amount: 5%);
 
         &:hover {
           text-decoration: none;
@@ -114,7 +114,7 @@
   }
 
   @media (min-width: 768px) {
-    &[class*="login-position-"] {
+    &[class*="login-position-"]:not(.login-position-center) {
       #page {
         padding-right: 0;
         padding-left: 0;

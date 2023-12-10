@@ -29,6 +29,7 @@ require_once($CFG->libdir . '/behat/lib.php');
 require_once($CFG->dirroot . '/course/lib.php');
 require_once(__DIR__ . '/../global_vars.php');
 require_once(__DIR__ . '/../lib/theme_settings.php');
+require_once(__DIR__ . '/../lib/accent_colors_settings.php');
 
 // Add block button in editing mode.
 $addblockbutton = $OUTPUT->addblockbutton();
@@ -109,9 +110,10 @@ $templatecontext = [
 
 $theme = theme_config::load('eduhub');
 
-$templatecontext = array_merge($templatecontext, theme_eduhub_footer_select($theme));
-$templatecontext = array_merge($templatecontext, theme_eduhub_container_type($theme));
-$templatecontext = array_merge($templatecontext, theme_eduhub_navbar_container_type($theme));
+$templatecontext = array_merge($templatecontext, theme_eduhub_dashboard_footer_select($theme));
+$templatecontext = array_merge($templatecontext, theme_eduhub_dashboard_container_type($theme));
+$templatecontext = array_merge($templatecontext, theme_eduhub_dashboard_navbar_container_type($theme));
+$templatecontext = array_merge($templatecontext, theme_eduhub_navbar_variant($theme));
 
 // Course page header img.
 $templatecontext = array_merge($templatecontext, $OUTPUT->eduhub_course_header_img());

@@ -120,7 +120,7 @@ function eduhub_testimonial_slider_setting($page)
     $total_users = get_config('theme_eduhub', 'testimonial_total_users');
 
     for ($count = 1; $count <= $total_users; $count++) {
-        // Slider image.
+        // User picture.
         $filearea = 'testimonial_slider_image_' . $count;
         $name = 'theme_eduhub/testimonial_slider_image_' . $count;
         $title = get_string('testimonial_slider_image', 'theme_eduhub');
@@ -130,29 +130,29 @@ function eduhub_testimonial_slider_setting($page)
         $setting->set_updatedcallback('theme_reset_all_caches');
         $page->add($setting);
 
-        // Slider name.
+        // User name.
         $name = 'theme_eduhub/testimonial_slider_name_' . $count;
         $title = get_string('testimonial_slider_name', 'theme_eduhub');
         $description = get_string('testimonial_slider_name_desc', 'theme_eduhub');
-        $default = 'Start Investing in You';
+        $default = 'John Doe';
         $setting = new admin_setting_configtext($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $page->add($setting);
         
-        // Slider title.
+        // User title.
         $name = 'theme_eduhub/testimonial_slider_title_' . $count;
         $title = get_string('testimonial_slider_title', 'theme_eduhub');
         $description = get_string('testimonial_slider_title_desc', 'theme_eduhub');
-        $default = 'Start Investing in You';
+        $default = 'User title';
         $setting = new admin_setting_configtext($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $page->add($setting);
 
-        // Slider caption.
+        // User caption.
         $name = 'theme_eduhub/testimonial_slider_caption_' . $count;
         $title = get_string('testimonial_slider_caption', 'theme_eduhub');
         $description = get_string('testimonial_slider_caption_desc', 'theme_eduhub');
-        $default = 'Some representative placeholder content for the second slide.';
+        $default = 'Write your caption.';
         $setting = new admin_setting_configtextarea($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $page->add($setting);

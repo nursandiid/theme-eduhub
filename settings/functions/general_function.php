@@ -77,21 +77,3 @@ function eduhub_preset_files($page)
     );
     $page->add($setting);
 }
-
-/**
- * Variable $brand-color.
- * 
- * @param admin_settingpage $page
- * @return void
- */
-function eduhub_brand_color($page)
-{
-    // We use an empty default value because the default colour should come from the preset.                                        
-    $name = 'theme_eduhub/brandcolor';
-    $title = get_string('brandcolor', 'theme_eduhub');
-    $description = get_string('brandcolor_desc', 'theme_eduhub');
-    $default = '#357a32';
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
-}

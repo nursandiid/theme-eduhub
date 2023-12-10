@@ -30,6 +30,12 @@ require_once __DIR__ . '/functions/theme_function.php';
 // Theme settings.                                                                              
 $page = new admin_settingpage('theme_eduhub_theme', get_string('themesettings', 'theme_eduhub'));
 
+// Accent color settings
+eduhub_brand_color($page);
+eduhub_navbar_variant($page);
+eduhub_navbar_login_button_bg_color($page);
+eduhub_navbar_login_button_text_color($page);
+
 // Container type settings.
 eduhub_dashboard_container_type($page);
 eduhub_dashboard_navbar_container_type($page);

@@ -97,6 +97,40 @@ function theme_eduhub_get_extra_scss($theme)
 }
 
 /**
+ * Get SCSS to prepend.
+ *
+ * @param theme_config $theme The theme config object.
+ * @return array
+ */
+function theme_eduhub_get_pre_scss($theme)
+{
+    $scss = '';
+
+    // Navbar variant
+    $navbar_variant = $theme->settings->navbar_variant ?? [];
+    $navbar_bg = explode(':', $navbar_variant)[0];
+    $navbar_accent = explode(':', $navbar_variant)[1];
+    $primary_accent = $theme->settings->brandcolor;
+
+    $scss .= '$navbar-bg: ' . $navbar_bg . ";\n";
+    if ($navbar_bg == 'primary') {
+        $scss .= '$navbar-accent: ' . $primary_accent . ";\n";
+    } else {
+        $scss .= '$navbar-accent: ' . $navbar_accent . ";\n";
+    }
+
+    $scss .= '$navbar-login-bg-accent: ' . $theme->settings->navbar_login_button_bg_color . ";\n";
+    $scss .= '$navbar-login-text-accent: ' . $theme->settings->navbar_login_button_text_color . ";\n";
+
+    // Prepend pre-scss.
+    if (!empty($theme->settings->scsspre)) {
+        $scss .= $theme->settings->scsspre;
+    }
+
+    return $scss;
+}
+
+/**
  * Serves any files associated with the theme settings.
  *
  * @param stdClass $course

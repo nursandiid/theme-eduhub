@@ -40,8 +40,14 @@ $string['preset'] = 'Theme preset';
 $string['preset_desc'] = 'Pick a preset to broadly change the look of the theme.';
 $string['presetfiles'] = 'Additional theme preset files';
 $string['presetfiles_desc'] = 'Preset files can be used to dramatically alter the appearance of the theme. See <a href=https://docs.moodle.org/dev/Boost_Presets>Boost presets</a> for information on creating and sharing your own preset files, and see the <a href=http://moodle.net/boost>Presets repository</a> for presets that others have shared.';
-$string['brandcolor'] = 'Brand colour';
-$string['brandcolor_desc'] = 'The accent colour.';
+$string['brandcolor'] = 'Accent color';
+$string['brandcolor_desc'] = 'The accent color.';
+$string['navbar_variant'] = 'Navbar variant';
+$string['navbar_variant_desc'] = 'The navbar variants accent colors. Choose from available options for a customized look.';
+$string['navbar_login_button_bg_color'] = 'Navbar login button background color';
+$string['navbar_login_button_bg_color_desc'] = 'The navbar login button background accent colors.';
+$string['navbar_login_button_text_color'] = 'Navbar login button text color';
+$string['navbar_login_button_text_color_desc'] = 'The navbar login button text accent colors.';
 
 // The name of the second tab in the theme settings.                                                                                
 $string['advancedsettings'] = 'Advanced settings';
