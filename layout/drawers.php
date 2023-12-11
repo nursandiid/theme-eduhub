@@ -129,8 +129,7 @@ $templatecontext = array_merge($templatecontext, theme_eduhub_dashboard_footer_s
 $templatecontext = array_merge($templatecontext, theme_eduhub_dashboard_container_type($theme));
 $templatecontext = array_merge($templatecontext, theme_eduhub_dashboard_navbar_container_type($theme));
 $templatecontext = array_merge($templatecontext, theme_eduhub_navbar_variant($theme));
-
-// Course page header img.
 $templatecontext = array_merge($templatecontext, $OUTPUT->eduhub_course_header_img());
+$templatecontext = array_merge($templatecontext, $OUTPUT->eduhub_base_url());
 
 echo $OUTPUT->render_from_template('theme_eduhub/drawers', $templatecontext);

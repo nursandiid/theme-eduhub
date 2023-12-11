@@ -74,4 +74,17 @@ class core_renderer extends \core_renderer
         $templatecontext['course_header_img'] = eduhub_get_course_image($this->page->course->id);
         return $templatecontext;
     }
+
+    /**
+     * Get base url base on config.
+     * 
+     * @param string $url 
+     * @param array $params
+     * @return string HTML to display the main header.
+     */
+    public function eduhub_base_url($url = '/', array $params = null)
+    {
+        $templatecontext['base_url'] = rtrim(new \moodle_url($url, $params), '/');
+        return $templatecontext;
+    }
 }

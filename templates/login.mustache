@@ -61,7 +61,7 @@ require(['theme_boost/loader'], function() {
 
 let logoimage = document.querySelector('#logoimage')
 logoimage?.addEventListener('click', () => {
-    window.location = '/'
+    window.location = '{{ base_url }}'
 })
 
 // Select the .login-container element
@@ -79,7 +79,7 @@ if (loginContainer && url.includes('forgot_password.php')) {
     loginContainer.appendChild(linkText)
 
     linkText.addEventListener('click', function() {
-        window.location.href = '/login'
+        window.location.href = '{{ base_url }}/login'
     })
 }
 {{/js}}

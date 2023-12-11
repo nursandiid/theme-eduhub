@@ -174,5 +174,6 @@ $templatecontext = array_merge($templatecontext, theme_eduhub_testimonial($theme
 $templatecontext = array_merge($templatecontext, theme_eduhub_partner($theme));
 $templatecontext = array_merge($templatecontext, theme_eduhub_footer($theme));
 $templatecontext = array_merge($templatecontext, theme_eduhub_navbar_variant($theme));
+$templatecontext = array_merge($templatecontext, $OUTPUT->eduhub_base_url());
 
 echo $OUTPUT->render_from_template('theme_eduhub/frontpage', $templatecontext);

@@ -27,7 +27,7 @@
                         {{/ category }}
                     </div>
                     <div class="card-body px-3 py-1">
-                        <a href="/course/view.php?id={{ id }}">
+                        <a href="{{ base_url }}/course/view.php?id={{ id }}">
                            <p class="font-weight-bold mb-0">{{ fullname }}</p>
                         </a>
                     </div>
@@ -36,7 +36,7 @@
             {{/ courselist }}
 
             <div class="col-12 text-center mt-5">
-                <a href="/course" class="btn btn-outline-primary btn-lg rounded-pill px-5">View all courses</a>
+                <a href="{{ base_url }}/course" class="btn btn-outline-primary btn-lg rounded-pill px-5">View all courses</a>
             </div>
         </div>
     </div>

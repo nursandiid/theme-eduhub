@@ -52,5 +52,6 @@ $templatecontext = [
 
 $theme = theme_config::load('eduhub');
 $templatecontext = array_merge($templatecontext, theme_eduhub_login_position($theme));
+$templatecontext = array_merge($templatecontext, $OUTPUT->eduhub_base_url());
 
 echo $OUTPUT->render_from_template('theme_eduhub/login', $templatecontext);
