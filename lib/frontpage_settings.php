@@ -208,7 +208,8 @@ function theme_eduhub_testimonial($theme)
     foreach (array_chunk(range(1, $total_users), 2) as $key => $users) {
         $testimonial_slides = [];
 
-        for ($i = 1, $j = 0; $i <= count($users); $i++, $j++) {
+        $loop = ($key * 2 + 1);
+        for ($i = $loop, $j = 0; $i < ($loop + count($users)); $i++, $j++) {
             $testimonial_slider_image = "testimonial_slider_image_{$i}";
             $testimonial_slider_name = "testimonial_slider_name_{$i}";
             $testimonial_slider_title = "testimonial_slider_title_{$i}";
