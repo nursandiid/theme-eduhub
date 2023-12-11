@@ -340,6 +340,10 @@ a[data-conversation-id] {
         width: calc(100% - 2rem);
       }
     }
+
+    .courseindex-section .text-truncate {
+      white-space: normal;
+    }
   }
 }
 
