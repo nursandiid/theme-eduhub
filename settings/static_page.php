@@ -32,6 +32,7 @@ $page = new admin_settingpage('theme_eduhub_static_page', get_string('staticpage
 
 eduhub_static_page_footer_select($page);
 eduhub_static_page_count($page);
+eduhub_static_page_header_image($page);
 eduhub_static_page_setting($page);
 
 $settings->add($page);

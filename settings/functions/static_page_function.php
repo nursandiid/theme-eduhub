@@ -62,6 +62,23 @@ function eduhub_static_page_count($page)
 }
 
 /**
+ * Retrieves the header image URL for the static page page.
+ * 
+ * @param admin_settingpage $page
+ * @return void
+ */
+function eduhub_static_page_header_image($page)
+{
+    $name = 'theme_eduhub/static_page_header_image';
+    $title = get_string('static_page_header_image', 'theme_eduhub');
+    $description = get_string('static_page_header_image_desc', 'theme_eduhub');
+    $filearea = 'static_page_header_image';
+    $setting = new admin_setting_configstoredfile($name, $title, $description, $filearea);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+}
+
+/**
  * Retrieves the settings or configuration for static pages.
  * 
  * @param admin_settingpage $page

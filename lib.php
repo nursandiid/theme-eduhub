@@ -92,6 +92,15 @@ function theme_eduhub_get_extra_scss($theme)
         $content .= ' }';
     }
 
+    // Sets the static page header image.
+    // static_page_header_image
+    $static_page_header_image_url = $theme->setting_file_url('static_page_header_image', 'static_page_header_image');
+    if (!empty($static_page_header_image_url)) {
+        $content .= '#static-page-banner { ';
+        $content .= "background-image: url('$static_page_header_image_url');";
+        $content .= ' }';
+    }
+
     // Always return the background image with the scss when we have it.
     return !empty($theme->settings->scss) ? $theme->settings->scss . ' ' . $content : $content;
 }
@@ -147,7 +156,8 @@ function theme_eduhub_pluginfile($course, $cm, $context, $filearea, $args, $forc
     $theme = theme_config::load('eduhub');
     $files = [
         'login_background_image',
-        'achievement_background_image'
+        'achievement_background_image',
+        'static_page_header_image'
     ];
 
     $slidercount = $theme->settings->slider_count;
