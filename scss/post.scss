@@ -258,7 +258,8 @@ a[data-conversation-id] {
       border-radius: .5rem;
       box-shadow: $box-shadow-sm;
       max-width: 100%;
-      max-height: 200px;
+      max-height: 256px;
+      min-width: 256px;
     }
   }
 }
