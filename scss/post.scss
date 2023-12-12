@@ -395,6 +395,14 @@ a[data-conversation-id] {
       border: 1px solid #f8f9fa38;
       text-align: center;
       margin: auto;
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 575.98px) {
+      .overlay {
+        min-width: 0;
+        width: 100%;
+      }
     }
   }
 
