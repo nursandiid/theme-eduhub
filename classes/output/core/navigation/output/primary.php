@@ -130,7 +130,9 @@ class primary extends \core\navigation\output\primary
         $nodes = [];
         foreach ($custommenunodes as $node) {
             $temp = $node->export_for_template($output);
-            $temp->custom_class = 'd-lg-block d-md-none';
+            if (isloggedin()) {
+                $temp->custom_class = 'd-lg-block d-md-none';
+            }
 
             $nodes[] = $temp;
         }
