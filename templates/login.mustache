@@ -38,10 +38,28 @@
         <div id="page" class="container-fluid mt-0">
             <div id="page-content" class="row">
                 <div id="region-main-box" class="col-12">
-                    <section id="region-main" class="col-12 h-100" aria-label="{{#str}}content{{/str}}">
+                    <section id="region-main" class="col-12 h-100 mt-0 pt-5" aria-label="{{#str}}content{{/str}}">
                     <div class="login-wrapper">
                         <div class="login-container">
+                        {{# forgot_password }}
+                            {{# logourl }}
+                            <div id="loginlogo" class="login-logo">
+                                <a href="{{{ config.homeurl }}}" class="text-decoration-none d-block">
+                                    <img id="logoimage" src="{{ logourl }}" alt="{{sitename}}" style="height: 80px;" />
+                                </a>
+                                <h1 class="login-heading sr-only">{{#str}} loginto, core, {{sitename}} {{/str}}</h1>
+                            </div>
+                            {{/ logourl }}
+                            {{^logourl}}
+                                <h1 class="login-heading mb-4">{{#str}} loginto, core, {{sitename}} {{/str}}</h1>
+                            {{/logourl}}
+                        {{/ forgot_password }}
+
                         {{{ output.main_content }}}
+
+                        {{# forgot_password }}
+                            <p class="back-to-login">Have already an account? click <a href="{{ base_url }}/login">here</a>.</p>
+                        {{/ forgot_password }}
                         </div>
                     </div>
                     </section>
@@ -59,27 +77,4 @@ require(['theme_boost/loader'], function() {
   M.util.js_complete('theme_boost/loader');
 });
 
-let logoimage = document.querySelector('#logoimage')
-logoimage?.addEventListener('click', () => {
-    window.location = '{{ base_url }}'
-})
-
-// Select the .login-container element
-var loginContainer = document.querySelector('.login-container')
-let url = window.location.pathname
-
-// Check if the element is found
-if (loginContainer && url.includes('forgot_password.php')) {
-    let linkText = document.createElement('button')
-    linkText.textContent = 'Back to login page'
-    linkText.type = 'button'
-
-    linkText.classList.add('back-to-login')
-
-    loginContainer.appendChild(linkText)
-
-    linkText.addEventListener('click', function() {
-        window.location.href = '{{ base_url }}/login'
-    })
-}
 {{/js}}

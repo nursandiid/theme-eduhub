@@ -1,5 +1,5 @@
 .login-background {
-  overflow: hidden;
+  // overflow: hidden;
 
   #page {
     background-image: url([[pix:theme|bg/1]]);
@@ -9,11 +9,11 @@
     &::before {
       background: linear-gradient(rgba($color: $black, $alpha: 0.8), rgba($color: $black, $alpha: 0.25));
       content: "";
-      height: 100%;
-      left: 0;
-      position: absolute;
       top: 0;
-      width: 100%;
+      left: 0;
+      position: fixed;
+      height: 100vh;
+      width: 100vw;
       z-index: 0;
     }
 
@@ -46,7 +46,7 @@
     }
 
     #loginguestbtn,
-    .back-to-login {
+    .back-to-login a {
       background-color: transparent;
       border: 0;
       color: $primary;
@@ -69,6 +69,10 @@
           text-decoration: none;
         }
       }
+    }
+
+    [role="main"]:has(.continuebutton) ~ p.back-to-login {
+      display: none;
     }
 
     .d-flex {

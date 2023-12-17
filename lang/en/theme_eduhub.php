@@ -34,6 +34,9 @@ $string['choosereadme'] = 'Theme Eduhub is a child theme of Boost. It adds sever
 // We need to include a lang string for each block region.                                                                          
 $string['region-side-pre'] = 'Right';
 
+// Override default languange
+$string['forgotaccount'] = 'Forgot password?';
+
 // Name of the first settings tab.                                                                                                  
 $string['generalsettings'] = 'General settings';
 $string['preset'] = 'Theme preset';

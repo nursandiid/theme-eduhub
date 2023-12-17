@@ -53,5 +53,9 @@ $templatecontext = [
 $theme = theme_config::load('eduhub');
 $templatecontext = array_merge($templatecontext, theme_eduhub_login_position($theme));
 $templatecontext = array_merge($templatecontext, $OUTPUT->eduhub_base_url());
+$templatecontext = array_merge($templatecontext, [
+    'forgot_password' => str_contains($PAGE->url->get_path(), '/login/forgot_password.php'),
+    'logourl' => $OUTPUT->get_logo_url()->get_path(true)
+]);
 
 echo $OUTPUT->render_from_template('theme_eduhub/login', $templatecontext);
