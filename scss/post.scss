@@ -194,10 +194,27 @@ a[data-conversation-id] {
 #page-enrol-index {
   .coursebox .info {
     justify-content: space-between;
-    margin-bottom: .5rem;
+    // margin-bottom: .5rem;
 
     .coursename {
       font-weight: bold;
+    }
+
+    .moreinfo,
+    .enrolmenticons {
+      position: absolute;
+    }
+
+    &:has(.moreinfo ~ .enrolmenticons) .moreinfo {
+      right: 3rem;
+    }
+
+    &:has(:not(.enrolmenticons)) .moreinfo {
+      right: 1.5rem;
+    }
+
+    .enrolmenticons {
+      right: 1rem;
     }
 
     .coursename .aalink::before {
