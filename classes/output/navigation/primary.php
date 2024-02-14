@@ -23,11 +23,9 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace theme_eduhub\output\core\navigation\output;
+namespace theme_eduhub\output\navigation;
 
-use renderable;
 use renderer_base;
-use templatable;
 use custom_menu;
 
 class primary extends \core\navigation\output\primary

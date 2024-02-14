@@ -45,7 +45,7 @@
         {{> theme_eduhub/frontpage/testimonials }}
     {{/testimonial_enabled}}
 
-    <div id="page" data-region="mainpage" data-usertour="scroller" class="drawers drag-container d-none overflow-hidden" style="height: 0;">
+    <div id="page" data-region="mainpage" data-usertour="scroller" class="drawers drag-container d-none" style="height: 0;">
         <div id="topofscroll">
             <div id="page-content" class="d-print-block main-inner">
                 <div id="region-main-box">
@@ -74,4 +74,8 @@
         Drawer.init();
         M.util.js_complete('theme_boost/loader');
     });
+
+    require(['theme_eduhub/showlog'], function(module) {
+        module.init()
+    })
 {{/js}}

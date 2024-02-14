@@ -134,7 +134,12 @@ a:not([class]):focus,
 }
 
 .text-truncate {
+  overflow: hidden !important;
+}
+
+.text-truncate:has(form) {
   overflow: visible !important;
+  white-space: normal !important;
 }
 
 .moodle-dialogue-base .moodle-dialogue-wrap {

@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -15,20 +14,5 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-/**
- * Theme eduhub renderers.
- *
- * @package    theme_eduhub
- * @copyright  2023 Nursandi
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
 
-// This line protects the file from being accessed by a URL directly.    
-defined('MOODLE_INTERNAL') || die();
-
-require_once($CFG->dirroot . '/course/renderer.php');
-
-class theme_eduhub_core_course_renderer extends core_course_renderer
-{
-    //
-}
+// dd('disabled layout');

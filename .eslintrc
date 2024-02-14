@@ -1,0 +1,19 @@
+{
+    "rules": {
+        "space-before-function-paren": "off",
+        "no-undef": "off",
+        "no-unused-vars": "off",
+        "no-alert": "off",
+        "semi": "off",
+        "@babel/semi": "off",
+        "no-console": "off",
+        "capitalized-comments": "off",
+        "no-trailing-spaces": "off",
+        "no-multiple-empty-lines": "off",
+        "jsdoc/empty-tags": "off",
+        "no-empty-function": "off",
+        "@babel/object-curly-spacing": "off",
+        "promise/always-return": "off",
+        "promise/catch-or-return": "off"
+    }
+}

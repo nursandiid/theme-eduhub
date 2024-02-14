@@ -48,7 +48,7 @@ require_once(__DIR__ . '/../lib/static_page_settings.php');
 require_once(__DIR__ . '/../lib/accent_colors_settings.php');
 
 $bodyattributes = $OUTPUT->body_attributes([]);
-$primary = new \theme_eduhub\output\core\navigation\output\primary($PAGE);
+$primary = new \theme_eduhub\output\navigation\primary($PAGE);
 $renderer = $PAGE->get_renderer('core');
 $primarymenu = $primary->export_for_template($renderer);
 

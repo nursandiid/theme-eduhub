@@ -8,6 +8,16 @@ body {
   background-color: #f2f3f7 !important;
 }
 
+@media (min-width: 1200px) {
+  .container-fluid {
+    max-width: 90vw;
+  }
+
+  .container {
+    max-width: 75vw;
+  }
+}
+
 @media (min-width: 768px) {
   #page.drawers .main-inner {
     padding: 1.5rem 2.5rem;
@@ -386,13 +396,13 @@ a[data-conversation-id] {
 }
 
 // courses sidebar
-#courseindex {
+// #courseindex {
 
-  .courseindex-link.text-truncate,
-  .courseindex-section .text-truncate {
-    white-space: normal !important;
-  }
-}
+//   .courseindex-link.text-truncate,
+//   .courseindex-section .text-truncate {
+//     white-space: normal !important;
+//   }
+// }
 
 // static page banner
 #static-page-banner {
@@ -451,5 +461,20 @@ a[data-conversation-id] {
     .container {
       min-height: calc(240px - 2rem);
     }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .mform {
+    width: 100%;
+    padding: 0;
+  }
+
+  #page-content #region-main {
+    margin-top: 0;
+  }
+
+  #page-content #region-main #user-notifications .alert {
+    margin: 0 0rem .5rem 0rem;
   }
 }

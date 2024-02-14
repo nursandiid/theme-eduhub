@@ -91,7 +91,7 @@ if ($PAGE->has_secondary_navigation()) {
     }
 }
 
-$primary = new \theme_eduhub\output\core\navigation\output\primary($PAGE);
+$primary = new \theme_eduhub\output\navigation\primary($PAGE);
 $renderer = $PAGE->get_renderer('core');
 $primarymenu = $primary->export_for_template($renderer);
 $buildregionmainsettings = !$PAGE->include_region_main_settings_in_header_actions() && !$PAGE->has_secondary_navigation();
@@ -131,5 +131,12 @@ $templatecontext = array_merge($templatecontext, theme_eduhub_dashboard_navbar_c
 $templatecontext = array_merge($templatecontext, theme_eduhub_navbar_variant($theme));
 $templatecontext = array_merge($templatecontext, $OUTPUT->eduhub_course_header_img());
 $templatecontext = array_merge($templatecontext, $OUTPUT->eduhub_base_url());
+
+global $DB;
+
+$firstcourse = $DB->get_record('course', ['id' => 6], '*', MUST_EXIST);
+$courseutil = new \theme_eduhub\util\course($firstcourse);
+
+$courseutil->get_course_contacts();
 
 echo $OUTPUT->render_from_template('theme_eduhub/drawers', $templatecontext);

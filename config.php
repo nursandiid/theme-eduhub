@@ -90,6 +90,11 @@ $THEME->layouts = [
         'defaultregion' => 'side-pre',
         'options' => array('nonavbar' => true),
     ),
+    // 'coursecategory' => array(
+    //     'file' => 'coursecategory.php',
+    //     'regions' => array('side-pre'),
+    //     'defaultregion' => 'side-pre',
+    // ),
 ];
 
 $THEME->extrascsscallback = 'theme_eduhub_get_extra_scss';
