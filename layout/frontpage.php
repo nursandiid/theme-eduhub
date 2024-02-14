@@ -161,6 +161,9 @@ $templatecontext = [
     'courselist' => $courselist
 ];
 
+$PAGE->requires->css('/theme/eduhub/js/owl-carousel/assets/owl.carousel.min.css');
+$PAGE->requires->css('/theme/eduhub/js/owl-carousel/assets/owl.theme.default.min.css');
+
 $theme = theme_config::load('eduhub');
 
 $templatecontext = array_merge($templatecontext, theme_eduhub_container_type($theme));

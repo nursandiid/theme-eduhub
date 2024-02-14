@@ -42,6 +42,7 @@
     {{/achievement_enabled}}
 
     {{#testimonial_enabled}}
+        {{> theme_eduhub/frontpage/our-sponsors }}
         {{> theme_eduhub/frontpage/testimonials }}
     {{/testimonial_enabled}}
 
@@ -74,7 +75,7 @@
         Drawer.init();
         M.util.js_complete('theme_boost/loader');
     });
-
+    
     require(['theme_eduhub/showlog'], function(module) {
         module.init()
     })
